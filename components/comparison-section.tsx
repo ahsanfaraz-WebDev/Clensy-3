@@ -1,20 +1,29 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Check } from "lucide-react"
-import Link from "next/link"
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  Check,
+  X,
+  ShieldCheck,
+  Clock,
+  Leaf,
+  Users,
+  BadgeCheck,
+  HeartHandshake,
+  Medal,
+} from "lucide-react";
 
 export default function ComparisonSection() {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -24,7 +33,7 @@ export default function ComparisonSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -33,116 +42,172 @@ export default function ComparisonSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
-
-  const checkmarkVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 10,
-      },
-    },
-  }
+  };
 
   const comparisonData = [
-    { feature: "Locally Owned and Operated", clensy: true, others: true },
-    { feature: "Over The Phone Estimates", clensy: true, others: false },
-    { feature: "Bonded and Insured", clensy: true, others: false },
-    { feature: "Environmentally Friendly", clensy: true, others: false },
-    { feature: "Customized Cleans", clensy: true, others: true },
-    { feature: "PRO Clean Promise", clensy: true, others: false },
-    { feature: "Background Checks", clensy: true, others: false },
-  ]
+    {
+      id: 1,
+      feature: "Locally Owned and Operated",
+      clensy: true,
+      others: true,
+      icon: <Users className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 2,
+      feature: "Over The Phone Estimates",
+      clensy: true,
+      others: false,
+      icon: <Clock className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 3,
+      feature: "Bonded and Insured",
+      clensy: true,
+      others: false,
+      icon: <ShieldCheck className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 4,
+      feature: "Environmentally Friendly",
+      clensy: true,
+      others: false,
+      icon: <Leaf className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 5,
+      feature: "Customized Cleans",
+      clensy: true,
+      others: true,
+      icon: <HeartHandshake className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 6,
+      feature: "PRO Clean Promise",
+      clensy: true,
+      others: false,
+      icon: <Medal className="w-5 h-5 text-[#007AFF]" />,
+    },
+    {
+      id: 7,
+      feature: "Background Checks",
+      clensy: true,
+      others: false,
+      icon: <BadgeCheck className="w-5 h-5 text-[#007AFF]" />,
+    },
+  ];
 
   return (
     <section ref={ref} className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-        <motion.div variants={itemVariants} initial="hidden" animate={controls} className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2 text-[#0070f3]">The Clensy</h2>
-          <h3 className="text-3xl font-bold mb-4">Difference</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto text-center">
-            We're leading the cleaning industry in customer satisfaction and service quality. Try Clensy and see why
-            cleaning is a big deal to us.
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate={controls}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-[#007AFF]">
+            The Clensy <span className="text-gray-800">Difference</span>
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto mt-4 text-center">
+            We're leading the cleaning industry in customer satisfaction and
+            service quality. Try Clensy and see why cleaning is a big deal to
+            us.
           </p>
+          <div className="w-24 h-1 bg-[#007AFF] mx-auto mt-6"></div>
         </motion.div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100"
-          whileHover={{ boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-          transition={{ duration: 0.3 }}
+          className="relative z-10"
         >
-          {/* Header */}
-          <div className="grid grid-cols-2">
-            <motion.div
-              className="bg-[#0070f3] text-white py-4 px-4 text-center font-medium"
-              initial={{ backgroundColor: "#0070f3" }}
-              whileHover={{ backgroundColor: "#0050d0" }}
-              transition={{ duration: 0.3 }}
-            >
-              Clensy
-            </motion.div>
-            <div className="bg-gray-200 text-gray-700 py-4 px-4 text-center font-medium">Independent Cleaners</div>
+          {/* Header Row */}
+          <div className="grid grid-cols-12 gap-6 mb-6">
+            {/* Features Header - Centered */}
+            <div className="col-span-5 flex justify-center items-center">
+              <h3 className="text-xl font-semibold text-gray-800">Features</h3>
+            </div>
+
+            {/* Comparison Headers */}
+            <div className="col-span-7">
+              <div className="grid grid-cols-2">
+                <div className="bg-[#007AFF] text-white py-4 text-center font-semibold">
+                  Clensy
+                </div>
+                <div className="bg-[#444b54] text-white py-4 text-center font-semibold">
+                  Independent Maids
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Comparison rows */}
-          {comparisonData.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="grid grid-cols-2 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition-colors duration-300"
-            >
-              <div className="py-4 px-6 flex justify-between items-center">
-                <span className="text-sm md:text-base">{item.feature}</span>
-                {item.clensy && (
-                  <motion.div
-                    variants={checkmarkVariants}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Check className="h-6 w-6 text-[#0070f3] stroke-[3px]" />
-                  </motion.div>
-                )}
-              </div>
-              <div className="py-4 px-6 flex justify-end items-center bg-gray-50">
-                {item.others ? (
-                  <motion.div
-                    variants={checkmarkVariants}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Check className="h-6 w-6 text-gray-400 stroke-[3px]" />
-                  </motion.div>
-                ) : (
-                  <div className="w-6 h-6"></div> // Empty space for alignment
-                )}
-              </div>
-            </motion.div>
-          ))}
+          {/* Comparison table */}
+          <div className="bg-white rounded-md shadow-md overflow-hidden">
+            {comparisonData.map((item, index) => (
+              <motion.div
+                key={item.id}
+                variants={itemVariants}
+                className={`grid grid-cols-12 ${
+                  index !== comparisonData.length - 1
+                    ? "border-b border-gray-100"
+                    : ""
+                }`}
+                custom={index}
+              >
+                {/* Feature Label */}
+                <div className="col-span-5 py-5 pl-8 flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center mr-4">
+                    {item.icon}
+                  </div>
+                  <span className="text-gray-700 font-medium">
+                    {item.feature}
+                  </span>
+                </div>
+
+                {/* Checkmarks */}
+                <div className="col-span-7 grid grid-cols-2">
+                  {/* Clensy checkmark */}
+                  <div className="py-5 flex justify-center items-center">
+                    <div className="w-8 h-8 bg-[#007AFF] rounded-full flex items-center justify-center">
+                      <Check className="h-5 w-5 text-white" />
+                    </div>
+                  </div>
+
+                  {/* Independent maids checkmark or X */}
+                  <div className="py-5 flex justify-center items-center">
+                    {item.others ? (
+                      <div className="w-8 h-8 bg-[#444b54] rounded-full flex items-center justify-center">
+                        <Check className="h-5 w-5 text-white" />
+                      </div>
+                    ) : (
+                      <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <X className="h-5 w-5 text-gray-500" />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
           initial="hidden"
           animate={controls}
-          className="text-center mt-8"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          className="text-center mt-10"
         >
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#0070f3] hover:bg-[#0050d0] shadow-md hover:shadow-lg transition-all duration-300"
+          <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: "#0050d0" }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="px-8 py-3 bg-[#007AFF] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Book Your Cleaning
-          </Link>
+            Experience the Clensy Difference
+          </motion.button>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

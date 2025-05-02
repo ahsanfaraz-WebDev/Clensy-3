@@ -132,8 +132,8 @@ export default function ChecklistSection() {
                       <path
                         d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
                         stroke={activeRoom === "living" ? "white" : "#007AFF"}
-                        strokeWidth="2"
-                      />
+              strokeWidth="2"
+            />
                     </svg>
                   </div>
                   <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
@@ -163,7 +163,7 @@ export default function ChecklistSection() {
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <rect
+            <rect
                         x="4"
                         y="4"
                         width="16"
@@ -174,8 +174,8 @@ export default function ChecklistSection() {
                       <path
                         d="M4 8H20"
                         stroke={activeRoom === "kitchen" ? "white" : "#007AFF"}
-                        strokeWidth="2"
-                      />
+              strokeWidth="2"
+            />
                     </svg>
                   </div>
                   <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
@@ -208,19 +208,19 @@ export default function ChecklistSection() {
                       <path
                         d="M4 18V12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12V18"
                         stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
-                        strokeWidth="2"
-                      />
+              strokeWidth="2"
+            />
                       <path
                         d="M2 18H22"
                         stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
-                        strokeWidth="2"
-                      />
+              strokeWidth="2"
+            />
                       <path
                         d="M6 11V8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8V11"
                         stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
-                        strokeWidth="2"
-                      />
-                    </svg>
+            strokeWidth="2"
+          />
+        </svg>
                   </div>
                   <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
                     BEDROOMS
@@ -235,7 +235,7 @@ export default function ChecklistSection() {
                 }`}
                 style={{ left: "47.14%", top: "55.42%" }}
                 onClick={() => setActiveRoom("bathroom")}
-              >
+        >
                 <span className="point-label icon-vanity">
                   <div
                     className={`point-icon ${
