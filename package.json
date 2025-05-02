@@ -59,18 +59,8 @@
     "vaul": "^0.9.6",
     "zod": "^3.24.1",
     "@emotion/is-prop-valid": "latest",
-    "expo": "latest",
-    "expo-asset": "latest",
-    "expo-file-system": "latest",
-    "expo-gl": "latest",
-    "react-native": "latest",
-    "three": "latest",
-    "@react-three/fiber": "latest",
-    "@types/three": "latest",
     "framer-motion": "latest",
-    "react-intersection-observer": "latest",
-    "@react-three/drei": "latest",
-    "maath": "latest"
+    "react-intersection-observer": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",

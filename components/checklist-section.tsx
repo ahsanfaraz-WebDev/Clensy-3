@@ -1,21 +1,22 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { Check } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Check } from "lucide-react";
+import Image from "next/image";
 
 export default function ChecklistSection() {
-  const [activeRoom, setActiveRoom] = useState("living")
-  const controls = useAnimation()
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
+  const [activeRoom, setActiveRoom] = useState("living");
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -25,7 +26,7 @@ export default function ChecklistSection() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -34,7 +35,7 @@ export default function ChecklistSection() {
       y: 0,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   const rooms = {
     living: [
@@ -77,149 +78,223 @@ export default function ChecklistSection() {
       "Dust ceiling fans",
       "Clean window sills",
     ],
-  }
+  };
 
   // Interactive house floor plan
   const renderHouseFloorPlan = () => {
     return (
-      <div className="relative h-[400px] w-full bg-[#1A2526] rounded-lg overflow-hidden">
-        <svg width="100%" height="100%" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Outer walls */}
-          <rect x="50" y="50" width="400" height="300" stroke="white" strokeWidth="2" />
+      <div className="relative h-[500px] w-full bg-[#1A2526] rounded-lg overflow-hidden">
+        {/* Main floor plan container with black background */}
+        <div className="absolute inset-0">
+          {/* Background image */}
+          <div className="w-full h-full relative">
+            <picture>
+              <source
+                media="(max-width:1200px)"
+                srcSet="https://transform.octanecdn.com/width/1200/https://octanecdn.com/maidprocom/maidprocom_964349301.png"
+              />
+              <Image
+                src="https://transform.octanecdn.com/width/1600/https://octanecdn.com/maidprocom/maidprocom_964349301.png"
+                alt="The 50-Point Checklist"
+                fill
+                className="object-contain"
+                priority
+              />
+            </picture>
 
-          {/* Kitchen - Top left */}
-          <g onClick={() => setActiveRoom("kitchen")} className="cursor-pointer">
-            <rect
-              x="50"
-              y="50"
-              width="150"
-              height="120"
-              fill={activeRoom === "kitchen" ? "rgba(0, 112, 243, 0.3)" : "transparent"}
-              stroke="white"
-              strokeWidth="2"
-            />
-            {/* Kitchen fixtures */}
-            <rect x="80" y="50" width="60" height="20" fill="#555" stroke="white" strokeWidth="1" />
-            <rect x="160" y="80" width="40" height="40" fill="#666" stroke="white" strokeWidth="1" />
-            <text x="100" y="110" fill="white" fontSize="14" textAnchor="middle" fontFamily="Montserrat">
-              Kitchen
-            </text>
-          </g>
+            {/* Interactive points */}
+            <div
+              className="points-wrapper absolute inset-0"
+              data-animation="inview-fade-up"
+              data-inview="true"
+            >
+              {/* Living Room Point */}
+              <button
+                className={`point absolute ${
+                  activeRoom === "living" ? "active" : ""
+                }`}
+                style={{ left: "24.12%", top: "37.95%" }}
+                onClick={() => setActiveRoom("living")}
+              >
+                <span className="point-label icon-house">
+                  <div
+                    className={`point-icon ${
+                      activeRoom === "living" ? "bg-[#007AFF]" : "bg-white/80"
+                    } p-2 rounded-md shadow-lg mb-1`}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        stroke={activeRoom === "living" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
+                    LIVING ROOM
+                  </div>
+                </span>
+              </button>
 
-          {/* Bathroom - Top right */}
-          <g onClick={() => setActiveRoom("bathroom")} className="cursor-pointer">
-            <rect
-              x="300"
-              y="50"
-              width="150"
-              height="120"
-              fill={activeRoom === "bathroom" ? "rgba(0, 112, 243, 0.3)" : "transparent"}
-              stroke="white"
-              strokeWidth="2"
-            />
-            {/* Bathroom fixtures */}
-            <circle cx="350" cy="100" r="20" fill="#555" stroke="white" strokeWidth="1" />
-            <rect x="380" y="70" width="50" height="30" fill="#666" stroke="white" strokeWidth="1" />
-            <text x="375" y="110" fill="white" fontSize="14" textAnchor="middle" fontFamily="Montserrat">
-              Bathroom
-            </text>
-          </g>
+              {/* Kitchen Point */}
+              <button
+                className={`point absolute ${
+                  activeRoom === "kitchen" ? "active" : ""
+                }`}
+                style={{ left: "41.51%", top: "22.69%" }}
+                onClick={() => setActiveRoom("kitchen")}
+              >
+                <span className="point-label icon-plate-set">
+                  <div
+                    className={`point-icon ${
+                      activeRoom === "kitchen" ? "bg-[#007AFF]" : "bg-white/80"
+                    } p-2 rounded-md shadow-lg mb-1`}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="4"
+                        y="4"
+                        width="16"
+                        height="16"
+                        stroke={activeRoom === "kitchen" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M4 8H20"
+                        stroke={activeRoom === "kitchen" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
+                    KITCHEN
+                  </div>
+                </span>
+              </button>
 
-          {/* Bedroom - Bottom right */}
-          <g onClick={() => setActiveRoom("bedroom")} className="cursor-pointer">
-            <rect
-              x="300"
-              y="230"
-              width="150"
-              height="120"
-              fill={activeRoom === "bedroom" ? "rgba(0, 112, 243, 0.3)" : "transparent"}
-              stroke="white"
-              strokeWidth="2"
-            />
-            {/* Bedroom fixtures */}
-            <rect x="320" y="260" width="80" height="50" fill="#555" stroke="white" strokeWidth="1" />
-            <text x="375" y="290" fill="white" fontSize="14" textAnchor="middle" fontFamily="Montserrat">
-              Bedroom
-            </text>
-          </g>
+              {/* Bedroom Point */}
+              <button
+                className={`point absolute ${
+                  activeRoom === "bedroom" ? "active" : ""
+                }`}
+                style={{ left: "79.28%", top: "40.06%" }}
+                onClick={() => setActiveRoom("bedroom")}
+              >
+                <span className="point-label icon-bed">
+                  <div
+                    className={`point-icon ${
+                      activeRoom === "bedroom" ? "bg-[#007AFF]" : "bg-white/80"
+                    } p-2 rounded-md shadow-lg mb-1`}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 18V12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12V18"
+                        stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M2 18H22"
+                        stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M6 11V8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8V11"
+                        stroke={activeRoom === "bedroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
+                    BEDROOMS
+                  </div>
+                </span>
+              </button>
 
-          {/* Living Room - Bottom left */}
-          <g onClick={() => setActiveRoom("living")} className="cursor-pointer">
-            <rect
-              x="50"
-              y="230"
-              width="150"
-              height="120"
-              fill={activeRoom === "living" ? "rgba(0, 112, 243, 0.3)" : "transparent"}
-              stroke="white"
-              strokeWidth="2"
-            />
-            {/* Living room fixtures */}
-            <rect x="80" y="260" width="90" height="40" fill="#555" stroke="white" strokeWidth="1" />
-            <text x="125" y="290" fill="white" fontSize="14" textAnchor="middle" fontFamily="Montserrat">
-              Living Room
-            </text>
-          </g>
-
-          {/* Hallway */}
-          <rect
-            x="200"
-            y="50"
-            width="100"
-            height="300"
-            fill="rgba(255, 255, 255, 0.05)"
-            stroke="white"
-            strokeWidth="2"
-          />
-
-          {/* Doors */}
-          <line x1="200" y1="100" x2="220" y2="100" stroke="white" strokeWidth="2" />
-          <line x1="300" y1="100" x2="280" y2="100" stroke="white" strokeWidth="2" />
-          <line x1="200" y1="280" x2="220" y2="280" stroke="white" strokeWidth="2" />
-          <line x1="300" y1="280" x2="280" y2="280" stroke="white" strokeWidth="2" />
-        </svg>
-
-        {/* Interactive elements */}
-        <motion.div
-          className={`absolute top-1/4 left-1/4 w-8 h-8 rounded-full bg-[#0070f3] flex items-center justify-center text-white text-xs font-bold ${activeRoom === "kitchen" ? "opacity-100" : "opacity-0"}`}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
-        >
-          K
-        </motion.div>
-
-        <motion.div
-          className={`absolute top-1/4 right-1/4 w-8 h-8 rounded-full bg-[#0070f3] flex items-center justify-center text-white text-xs font-bold ${activeRoom === "bathroom" ? "opacity-100" : "opacity-0"}`}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, delay: 0.5 }}
-        >
-          B
-        </motion.div>
-
-        <motion.div
-          className={`absolute bottom-1/4 right-1/4 w-8 h-8 rounded-full bg-[#0070f3] flex items-center justify-center text-white text-xs font-bold ${activeRoom === "bedroom" ? "opacity-100" : "opacity-0"}`}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, delay: 1 }}
-        >
-          BR
-        </motion.div>
-
-        <motion.div
-          className={`absolute bottom-1/4 left-1/4 w-8 h-8 rounded-full bg-[#0070f3] flex items-center justify-center text-white text-xs font-bold ${activeRoom === "living" ? "opacity-100" : "opacity-0"}`}
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2, delay: 1.5 }}
-        >
-          L
-        </motion.div>
+              {/* Bathroom Point */}
+              <button
+                className={`point absolute ${
+                  activeRoom === "bathroom" ? "active" : ""
+                }`}
+                style={{ left: "47.14%", top: "55.42%" }}
+                onClick={() => setActiveRoom("bathroom")}
+              >
+                <span className="point-label icon-vanity">
+                  <div
+                    className={`point-icon ${
+                      activeRoom === "bathroom" ? "bg-[#007AFF]" : "bg-white/80"
+                    } p-2 rounded-md shadow-lg mb-1`}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4 8H20"
+                        stroke={activeRoom === "bathroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M8 8V20"
+                        stroke={activeRoom === "bathroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M16 8V20"
+                        stroke={activeRoom === "bathroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M4 12H20"
+                        stroke={activeRoom === "bathroom" ? "white" : "#007AFF"}
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-center text-white font-bold text-sm bg-[#007AFF] py-1 px-3 rounded-md">
+                    BATHROOMS
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
-    <section ref={ref} className="py-16 bg-[#1A2526] text-white relative overflow-hidden">
+    <section
+      ref={ref}
+      className="py-16 bg-[#1A2526] text-white relative overflow-hidden"
+    >
       {/* Animated wavy lines */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <svg width="100%" height="100%" className="absolute top-0 left-0 opacity-10">
+        <svg
+          width="100%"
+          height="100%"
+          className="absolute top-0 left-0 opacity-10"
+        >
           <motion.path
             d="M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 C1150,200 1350,0 1500,100 C1650,200 1850,0 2000,100"
             stroke="#0070f3"
@@ -242,11 +317,19 @@ export default function ChecklistSection() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div variants={itemVariants} initial="hidden" animate={controls} className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">The 50-Point Checklist</h2>
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate={controls}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
+            The 50-Point Checklist
+          </h2>
           <p className="text-white/80 max-w-2xl mx-auto font-montserrat font-normal">
-            No one knows your home better than you, and no one knows more about cleaning than we do. That's why before
-            we start cleaning, we reference our 50-Point Checklist.
+            No one knows your home better than you, and no one knows more about
+            cleaning than we do. That's why before we start cleaning, we
+            reference our 50-Point Checklist.
           </p>
           <div className="w-20 h-1 bg-[#0070f3] mx-auto mt-6"></div>
         </motion.div>
@@ -258,7 +341,10 @@ export default function ChecklistSection() {
           className="grid md:grid-cols-5 gap-8 items-start"
         >
           {/* Interactive House Floor Plan (60% width on desktop) */}
-          <motion.div variants={itemVariants} className="md:col-span-3 relative">
+          <motion.div
+            variants={itemVariants}
+            className="md:col-span-3 relative"
+          >
             {renderHouseFloorPlan()}
           </motion.div>
 
@@ -286,7 +372,9 @@ export default function ChecklistSection() {
                     >
                       <Check className="h-3 w-3 text-white" />
                     </motion.div>
-                    <span className="text-white/90 font-montserrat">{item}</span>
+                    <span className="text-white/90 font-montserrat">
+                      {item}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
@@ -298,8 +386,18 @@ export default function ChecklistSection() {
                 className="text-white border border-[#0070f3] hover:bg-[#0070f3]/10 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center transition-all duration-300"
               >
                 View Full 50-Point Checklist
-                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <svg
+                  className="ml-2 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
                 </svg>
               </Link>
             </div>
@@ -324,5 +422,5 @@ export default function ChecklistSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

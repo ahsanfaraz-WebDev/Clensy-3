@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
   --brand-blue: #0070f3;
   --brand-blue-dark: #0050d0;
 }
@@ -80,7 +81,8 @@ section {
 
 /* Apple-style dropdown menu */
 .apple-dropdown {
-  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
 }
@@ -283,7 +285,11 @@ section {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -374,7 +380,11 @@ section {
 
 /* Hero section styles */
 .hero-overlay {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
 }
 
 .hero-text-shadow {
@@ -538,5 +548,58 @@ section {
 @media (min-width: 1536px) {
   .container {
     max-width: 1400px;
+  }
+}
+
+/* Interactive Points for Floor Plan */
+.points-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.point {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  border: none;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.point:hover .point-icon {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px -5px rgba(0, 122, 255, 0.4);
+}
+
+.point-icon {
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.point.active .point-icon {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px -5px rgba(0, 122, 255, 0.4);
+}
+
+.point-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 640px) {
+  .point-label {
+    transform: scale(0.8);
   }
 }
