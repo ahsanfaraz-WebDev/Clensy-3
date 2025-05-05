@@ -5,8 +5,8 @@
 :root {
   --font-montserrat: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
-  --brand-blue: #0070f3;
-  --brand-blue-dark: #0050d0;
+  --brand-blue: #007bff;
+  --brand-blue-dark: #0056b3;
 }
 
 * {

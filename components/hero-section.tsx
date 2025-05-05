@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Check } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 
 export default function HeroSection() {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-black pt-16">
@@ -41,7 +41,9 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block mb-6 px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full"
             >
-              <span className="text-white/90 text-sm font-medium">Professional Cleaning Services</span>
+              <span className="text-white/90 text-sm font-medium">
+                Professional Cleaning Services
+              </span>
             </motion.div>
 
             <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6 hero-text-shadow">
@@ -55,7 +57,8 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="text-lg text-white/80 mb-8 max-w-xl"
             >
-              We make it easy to get your home cleaned. Professional cleaning services tailored to your needs.
+              We make it easy to get your home cleaned. Professional cleaning
+              services tailored to your needs.
             </motion.p>
 
             <motion.div
@@ -73,13 +76,17 @@ export default function HeroSection() {
 
               <div className="flex items-center sm:mt-0 mt-4">
                 <div className="flex items-center text-white/90 mr-8">
-                  <Check className="h-5 w-5 mr-2 text-white" />
-                  <span className="text-sm whitespace-nowrap">30-second pricing</span>
+                  <Check className="h-5 w-5 mr-2 text-[#28A745]" />
+                  <span className="text-sm whitespace-nowrap">
+                    30-second pricing
+                  </span>
                 </div>
 
                 <div className="flex items-center text-white/90">
-                  <Check className="h-5 w-5 mr-2 text-white" />
-                  <span className="text-sm whitespace-nowrap">We never cancel</span>
+                  <Check className="h-5 w-5 mr-2 text-[#28A745]" />
+                  <span className="text-sm whitespace-nowrap">
+                    We never cancel
+                  </span>
                 </div>
               </div>
             </motion.div>
@@ -96,10 +103,20 @@ export default function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
       >
-        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
       </motion.div>
     </section>
-  )
+  );
 }
