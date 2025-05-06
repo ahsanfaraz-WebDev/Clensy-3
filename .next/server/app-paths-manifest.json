@@ -1,3 +1,6 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/services/moving-cleaning/page": "app/services/moving-cleaning/page.js",
+  "/services/deep-cleaning/page": "app/services/deep-cleaning/page.js",
+  "/services/routine-cleaning/page": "app/services/routine-cleaning/page.js"
 }

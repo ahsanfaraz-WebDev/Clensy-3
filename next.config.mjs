@@ -8,7 +8,16 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
-}
+  serverExternalPackages: [],
+  trailingSlash: true,
+  output: "standalone",
+};
 
-export default nextConfig
+export default nextConfig;
