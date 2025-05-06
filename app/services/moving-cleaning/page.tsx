@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  CheckCircle,
+  Check,
   ArrowRight,
   Star,
   Package,
@@ -14,6 +14,8 @@ import {
   ArrowRight as ArrowRightIcon,
   Calendar,
   Clock,
+  Shield,
+  Users,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -31,447 +33,419 @@ export default function MovingCleaningPage() {
     <main className="overflow-x-hidden">
       <Navbar />
 
-      {/* Hero Banner - Horizontal layout */}
-      <section className="relative bg-black">
+      {/* Split Hero Section - Matching deep cleaning layout */}
+      <section className="relative min-h-[85vh] bg-black pt-16">
+        {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="grid grid-cols-2 h-full">
-            <div className="relative">
+          <Image
+            src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=2070&auto=format&fit=crop"
+            alt="Moving cleaning service"
+            fill
+            className="object-cover opacity-70"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[calc(85vh-64px)]">
+            {/* Text content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="inline-block mb-6 px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full"
+              >
+                <span className="text-white/90 text-sm font-medium">
+                  Moving Cleaning Services
+                </span>
+              </motion.div>
+
+              <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6 hero-text-shadow">
+                Fresh Start, <br />
+                <span className="text-[#4CAF50]">Clean Slate</span>
+              </h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-lg text-white/80 mb-8 max-w-xl"
+              >
+                Specialized cleaning services for when you're moving out of your
+                old place or into your new home. We ensure a smooth transition
+                with professional, thorough cleaning.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Link
+                  href="/contact"
+                  className="bg-white text-black hover:bg-white/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
+                >
+                  <span className="text-center w-full">Get a Free Quote</span>
+                </Link>
+
+                <div className="flex items-center sm:mt-0 mt-4">
+                  <div className="flex items-center text-white/90 mr-8">
+                    <Clock className="h-5 w-5 mr-2 text-[#4CAF50]" />
+                    <span className="text-sm whitespace-nowrap">
+                      5-8 Hour Service
+                    </span>
+                  </div>
+
+                  <div className="flex items-center text-white/90">
+                    <Shield className="h-5 w-5 mr-2 text-[#4CAF50]" />
+                    <span className="text-sm whitespace-nowrap">
+                      100% Satisfaction
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right side - Empty space for better balance */}
+            <div className="hidden md:block"></div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </motion.div>
+      </section>
+
+      {/* What's Included Section with Zigzag Layout - Following deep cleaning pattern */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              What's Included in Our Moving Cleaning
+            </h2>
+            <p className="text-lg text-gray-600">
+              Our comprehensive moving cleaning service ensures your old or new
+              home receives thorough attention for a seamless transition.
+            </p>
+          </div>
+
+          {/* Item 1 - Left image, right text - Move-Out Cleaning */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?q=80&w=1470&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1470&auto=format&fit=crop"
                 alt="Move-out cleaning"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/30"></div>
             </div>
-            <div className="relative">
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl font-bold mb-4">Move-Out Cleaning</h3>
+              <p className="text-gray-600 mb-6">
+                Our move-out cleaning service ensures you leave your rental
+                property in pristine condition, maximizing the chances of
+                getting your security deposit back in full.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Deep cleaning of all rooms, including hard-to-reach areas
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Wall cleaning and scuff/mark removal where possible
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Inside cabinet and drawer cleaning</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Appliance cleaning inside and out (if remaining)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Item 2 - Right image, left text - Move-In Cleaning */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Move-In Cleaning</h3>
+              <p className="text-gray-600 mb-6">
+                Start fresh in your new home with our comprehensive move-in
+                cleaning service, ensuring every surface is sanitized and ready
+                for your belongings.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Sanitization of all surfaces, especially high-touch areas
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Deep cleaning of bathrooms and kitchen</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>
+                    Thorough dusting of all surfaces and light fixtures
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Window cleaning and floor treatments</span>
+                </li>
+              </ul>
+            </div>
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1470&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1556912173-3c66353f29a0?q=80&w=1470&auto=format&fit=crop"
                 alt="Move-in cleaning"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/30"></div>
             </div>
           </div>
-        </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-28">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <div className="inline-block mb-6 px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full">
-                <span className="text-white text-sm font-medium">
-                  Moving Cleaning Services
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 hero-text-shadow">
-                Fresh Start, <span className="text-[#4CAF50]">Clean Slate</span>
-              </h1>
-
-              <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-                Specialized cleaning services for when you're moving out of your
-                old place or into your new home.
+          {/* Item 3 - Left image, right text - Post-Renovation Cleaning */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
+              <Image
+                src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=1470&auto=format&fit=crop"
+                alt="Post-renovation cleaning"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <h3 className="text-2xl font-bold mb-4">
+                Post-Renovation Cleaning
+              </h3>
+              <p className="text-gray-600 mb-6">
+                If your new home has undergone renovations, our specialized
+                cleaning removes dust, debris, and construction residue before
+                you move in.
               </p>
-
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link
-                  href="#move-out"
-                  onClick={() => setActiveTab("moveOut")}
-                  className="bg-white text-black hover:bg-white/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
-                >
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  <span>Move-Out Cleaning</span>
-                </Link>
-
-                <Link
-                  href="#move-in"
-                  onClick={() => setActiveTab("moveIn")}
-                  className="bg-[#4CAF50] text-white hover:bg-[#4CAF50]/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
-                >
-                  <span>Move-In Cleaning</span>
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </motion.div>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Removal of construction dust from all surfaces</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Cleaning of vents and air ducts to remove debris</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Interior window and frame cleaning</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <span>Final sanitization of all living spaces</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Tabs Navigation */}
-      <section className="bg-white py-8 border-b">
+      {/* Before & After Section - Matching deep cleaning page */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center">
-            <div className="inline-flex border border-gray-200 rounded-full p-1 bg-gray-50">
-              <button
-                onClick={() => setActiveTab("moveOut")}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeTab === "moveOut"
-                    ? "bg-black text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                Move-Out Cleaning
-              </button>
-              <button
-                onClick={() => setActiveTab("moveIn")}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeTab === "moveIn"
-                    ? "bg-[#4CAF50] text-white"
-                    : "text-gray-700 hover:bg-gray-100"
-                }`}
-              >
-                Move-In Cleaning
-              </button>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              The Moving Cleaning Difference
+            </h2>
+            <p className="text-lg text-gray-600">
+              See the dramatic transformation our moving cleaning services
+              deliver for both move-in and move-out situations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Before & After 1 - Move-Out */}
+            <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                  <div className="relative h-48 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=500&auto=format&fit=crop"
+                      alt="Before move-out cleaning - dirty kitchen"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-black/70 text-white px-3 py-1 text-sm">
+                      Before
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="relative h-48 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=500&auto=format&fit=crop"
+                      alt="After move-out cleaning - spotless kitchen"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-green-600/70 text-white px-3 py-1 text-sm">
+                      After
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                Move-Out Transformation
+              </h3>
+              <p className="text-gray-600">
+                Our thorough move-out cleaning helps secure your deposit by
+                leaving the property in pristine condition for the next tenant.
+              </p>
+            </div>
+
+            {/* Before & After 2 - Move-In */}
+            <div className="bg-gray-50 rounded-2xl p-6 shadow-sm">
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                  <div className="relative h-48 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=500&auto=format&fit=crop"
+                      alt="Before move-in cleaning - dirty bathroom"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-black/70 text-white px-3 py-1 text-sm">
+                      Before
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div className="relative h-48 rounded-lg overflow-hidden">
+                    <Image
+                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop"
+                      alt="After move-in cleaning - sparkling bathroom"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute bottom-0 left-0 bg-green-600/70 text-white px-3 py-1 text-sm">
+                      After
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Move-In Revival</h3>
+              <p className="text-gray-600">
+                Our move-in cleaning ensures your new home is sanitized and
+                ready for you to start fresh in a clean environment.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Move-Out Section */}
-      <div className={activeTab === "moveOut" ? "block" : "hidden"}>
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="inline-block bg-black/10 text-black px-4 py-1 rounded-full text-sm font-medium mb-6">
-                  Move-Out Cleaning
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Leave Your Old Place Spotless & Secure Your Deposit
-                </h2>
-                <p className="text-lg text-gray-600 mb-8">
-                  Our comprehensive move-out cleaning service is designed to
-                  help you leave your rental property in pristine condition,
-                  maximizing your chances of getting your security deposit back
-                  in full.
-                </p>
-
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-black flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Deep Clean All Rooms
-                      </h3>
-                      <p className="text-gray-600">
-                        We thoroughly clean every room from top to bottom,
-                        including hard-to-reach areas often missed.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-black flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Remove All Traces
-                      </h3>
-                      <p className="text-gray-600">
-                        We eliminate all signs of wear and tear where possible,
-                        including scuff marks, dust, and dirt buildup.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-black flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Landlord-Approved Cleaning
-                      </h3>
-                      <p className="text-gray-600">
-                        Our cleaning checklist is designed to meet and exceed
-                        typical landlord and property management expectations.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-
-                <Link
-                  href="/pricing"
-                  className="bg-black text-white hover:bg-black/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
-                >
-                  Schedule Move-Out Cleaning
-                </Link>
-              </div>
-
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                  <Image
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1470&auto=format&fit=crop"
-                    alt="Move-out cleaning"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                  <div className="flex items-center">
-                    <div className="bg-black/10 rounded-full p-3 mr-4">
-                      <Calendar className="h-6 w-6 text-black" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500">Typical Duration</p>
-                      <p className="font-semibold">4-6 hours</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Moving Cleaning Benefits - Similar to deep cleaning's "When to Choose" section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Benefits of Professional Moving Cleaning
+            </h2>
+            <p className="text-lg text-white/80">
+              Why investing in professional moving cleaning services is
+              essential for a smooth transition.
+            </p>
           </div>
-        </section>
 
-        {/* Move-Out Checklist */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Move-Out Cleaning Checklist
-              </h2>
-              <p className="text-lg text-gray-600">
-                Our comprehensive move-out cleaning service covers all the
-                essential areas that landlords and property managers inspect.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="bg-[#4CAF50]/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
+                <Image
+                  src="https://images.unsplash.com/photo-1621274147744-cfb5753ccbb3?q=80&w=100&auto=format&fit=crop"
+                  alt="Deposit return"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">
+                Secure Your Deposit
+              </h3>
+              <p className="text-white/80">
+                Our thorough move-out cleaning significantly increases your
+                chances of receiving your full security deposit back from your
+                landlord.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Package className="h-5 w-5 mr-2 text-black" />
-                  Kitchen Deep Clean
-                </h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Inside and outside of all appliances</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Inside cabinets and drawers</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Sink, countertops and backsplash</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Floor cleaning and disinfection</span>
-                  </li>
-                </ul>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="bg-[#4CAF50]/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
+                <Image
+                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=100&auto=format&fit=crop"
+                  alt="Stress reduction"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
               </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Package className="h-5 w-5 mr-2 text-black" />
-                  Bathroom Sanitizing
-                </h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Deep cleaning of shower/tub</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Toilet sanitization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Mirror and glass cleaning</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Tile grout cleaning</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Package className="h-5 w-5 mr-2 text-black" />
-                  General Areas
-                </h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Baseboards and crown molding</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Light fixtures and ceiling fans</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>Window sills and tracks</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 mr-2 text-[#4CAF50] flex-shrink-0 mt-0.5" />
-                    <span>All floors vacuumed and mopped</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Move-In Section */}
-      <div className={activeTab === "moveIn" ? "block" : "hidden"}>
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="order-2 lg:order-1 relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                  <Image
-                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1470&auto=format&fit=crop"
-                    alt="Move-in cleaning"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
-                  <div className="flex items-center">
-                    <div className="bg-[#4CAF50]/10 rounded-full p-3 mr-4">
-                      <Clock className="h-6 w-6 text-[#4CAF50]" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-500">Typical Duration</p>
-                      <p className="font-semibold">4-8 hours</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="order-1 lg:order-2">
-                <span className="inline-block bg-[#4CAF50]/10 text-[#4CAF50] px-4 py-1 rounded-full text-sm font-medium mb-6">
-                  Move-In Cleaning
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Start Fresh in Your New Home
-                </h2>
-                <p className="text-lg text-gray-600 mb-8">
-                  Our move-in cleaning service ensures your new home is
-                  thoroughly sanitized and ready for you to unpack and settle in
-                  with complete peace of mind.
-                </p>
-
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-[#4CAF50] flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Sanitize Before You Settle
-                      </h3>
-                      <p className="text-gray-600">
-                        We disinfect all surfaces to eliminate germs, bacteria,
-                        and allergens left by previous occupants.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-[#4CAF50] flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Focus on Unpacking
-                      </h3>
-                      <p className="text-gray-600">
-                        While we handle the cleaning, you can focus on unpacking
-                        and organizing your belongings.
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 mr-3 text-[#4CAF50] flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-lg">
-                        Allergen Removal
-                      </h3>
-                      <p className="text-gray-600">
-                        We pay special attention to removing dust, pet dander,
-                        and other allergens that may affect your family's
-                        health.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-
-                <Link
-                  href="/pricing"
-                  className="bg-[#4CAF50] text-white hover:bg-[#4CAF50]/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
-                >
-                  Schedule Move-In Cleaning
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Move-In Process */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Move-In Cleaning Process
-              </h2>
-              <p className="text-lg text-gray-600">
-                We recommend scheduling your move-in cleaning before your
-                furniture and boxes arrive to ensure every corner gets proper
-                attention.
+              <h3 className="text-xl font-semibold mb-3">
+                Reduce Moving Stress
+              </h3>
+              <p className="text-white/80">
+                Let professionals handle the cleaning while you focus on the
+                many other aspects of your move, significantly reducing your
+                stress.
               </p>
             </div>
 
-            <div className="relative">
-              <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-gray-200 -translate-y-1/2 hidden md:block"></div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#4CAF50] text-white rounded-full flex items-center justify-center text-xl font-bold z-10">
-                    1
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 mt-4">
-                    Initial Assessment
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    We assess the condition of your new home and identify areas
-                    requiring special attention, such as stains or heavy soil.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#4CAF50] text-white rounded-full flex items-center justify-center text-xl font-bold z-10">
-                    2
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 mt-4">
-                    Deep Cleaning
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Our professional team performs a systematic deep cleaning of
-                    every room, starting from the top (ceiling, fans, lights)
-                    and working down to the floors.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-                  <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#4CAF50] text-white rounded-full flex items-center justify-center text-xl font-bold z-10">
-                    3
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 mt-4">
-                    Final Sanitization
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    We finish with a complete sanitization of high-touch
-                    surfaces like doorknobs, light switches, and cabinet handles
-                    to eliminate germs.
-                  </p>
-                </div>
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="bg-[#4CAF50]/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
+                <Image
+                  src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?q=80&w=100&auto=format&fit=crop"
+                  alt="Health protection"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
+                />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Health Protection</h3>
+              <p className="text-white/80">
+                Our sanitization process eliminates allergens, bacteria, and
+                germs from previous occupants, creating a healthier environment
+                in your new home.
+              </p>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-900 text-white">
@@ -554,8 +528,103 @@ export default function MovingCleaningPage() {
         </div>
       </section>
 
+      {/* Moving Stress Reduction - Unique to Moving Cleaning */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Reduce Your Moving Stress
+            </h2>
+            <p className="text-lg text-gray-600">
+              Moving is consistently ranked as one of life's most stressful
+              events. Let us handle the cleaning so you can focus on settling
+              into your new home.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1770&auto=format&fit=crop"
+                alt="Person relieved from moving stress"
+                width={600}
+                height={450}
+                className="rounded-2xl shadow-lg"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-6">
+                How Professional Moving Cleaning Helps
+              </h3>
+
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-black/5 rounded-full p-3 mr-4 flex-shrink-0">
+                    <Clock className="h-6 w-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">
+                      Save Valuable Time
+                    </h4>
+                    <p className="text-gray-600">
+                      The average person spends 12-16 hours cleaning when moving
+                      out. Our team can complete the job in 4-6 hours, giving
+                      you back precious time during your move.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-black/5 rounded-full p-3 mr-4 flex-shrink-0">
+                    <Shield className="h-6 w-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">
+                      Avoid Deposit Disputes
+                    </h4>
+                    <p className="text-gray-600">
+                      Security deposit disputes are common and stressful. Our
+                      professional cleaning service provides documentation that
+                      you've fulfilled your lease's cleaning requirements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-black/5 rounded-full p-3 mr-4 flex-shrink-0">
+                    <Users className="h-6 w-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">
+                      Focus on Your Family's Transition
+                    </h4>
+                    <p className="text-gray-600">
+                      Moving is especially challenging for families with
+                      children. Our service lets you focus on helping your
+                      family adjust to their new environment rather than
+                      scrubbing your old one.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">

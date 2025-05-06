@@ -76,10 +76,10 @@ export default function DeepCleaningPage() {
                 className="flex flex-col sm:flex-row gap-4"
               >
                 <Link
-                  href="/pricing"
+                  href="/contact"
                   className="bg-white text-black hover:bg-white/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
                 >
-                  <span className="text-center w-full">Get a Quote</span>
+                  <span className="text-center w-full">Get a Free Quote</span>
                 </Link>
 
                 <div className="flex items-center sm:mt-0 mt-4">
@@ -546,8 +546,172 @@ export default function DeepCleaningPage() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white">{/* Testimonials content */}</section>
+
+      {/* Deep vs Regular Cleaning Comparison - Unique to Deep Cleaning */}
+      <section className="py-24 bg-blue-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Deep Cleaning vs. Regular Cleaning
+            </h2>
+            <p className="text-lg text-gray-600">
+              Understanding the difference between our deep cleaning and regular
+              cleaning services helps you choose the right option for your
+              needs.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Regular Cleaning Column */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden"
+              >
+                <div className="bg-gray-100 p-6 text-center">
+                  <h3 className="text-2xl font-bold text-gray-800">
+                    Regular Cleaning
+                  </h3>
+                  <p className="text-gray-600 mt-2">
+                    Maintenance cleaning for already-clean homes
+                  </p>
+                </div>
+                <div className="p-8">
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Surface dusting</span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Dust visible surfaces and areas
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Bathroom basics</span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Clean toilets, sinks, and shower surfaces
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Kitchen cleaning</span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Wipe countertops and appliance exteriors
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Floor maintenance</span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Vacuum carpets and mop hard floors
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+                    <p className="text-gray-500">
+                      Recommended frequency: <br />
+                      <span className="font-semibold text-gray-700">
+                        Weekly or bi-weekly
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Deep Cleaning Column */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden ring-2 ring-blue-500"
+              >
+                <div className="bg-blue-600 p-6 text-center">
+                  <h3 className="text-2xl font-bold text-white">
+                    Deep Cleaning
+                  </h3>
+                  <p className="text-blue-100 mt-2">
+                    Intensive cleaning for neglected or heavily used areas
+                  </p>
+                </div>
+                <div className="p-8">
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">
+                          Comprehensive dusting
+                        </span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Dust all surfaces including baseboards, door frames,
+                          and ceiling fans
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">
+                          Deep bathroom sanitizing
+                        </span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Descale shower heads, clean grout, sanitize behind
+                          toilets
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">
+                          Inside appliance cleaning
+                        </span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Clean inside ovens, refrigerators, and cabinet
+                          interiors
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-3 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium">Detailed floor care</span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          Edge vacuuming, move furniture, clean under rugs
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+                    <p className="text-gray-500">
+                      Recommended frequency: <br />
+                      <span className="font-semibold text-blue-600">
+                        Quarterly or seasonally
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section - Different styling */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
