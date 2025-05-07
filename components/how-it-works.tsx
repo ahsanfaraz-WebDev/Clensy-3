@@ -71,7 +71,7 @@ export default function HowItWorks() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                   <div className="flex items-center text-sm text-gray-600">
-                    <Clock className="h-4 w-4 text-[#28A745] mr-2" />
+                    <Clock className="h-4 w-4 text-[#007BFF] mr-2" />
                     <span>Takes less than 30 seconds</span>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export default function HowItWorks() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                   <div className="flex items-center text-sm text-gray-600">
-                    <Check className="h-4 w-4 text-[#28A745] mr-2" />
+                    <Check className="h-4 w-4 text-[#007BFF] mr-2" />
                     <span>Trained and background-checked professionals</span>
                   </div>
                 </div>
@@ -103,11 +103,11 @@ export default function HowItWorks() {
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Relax in your freshly cleaned space. We'll be back on your
-                  schedule - weekly, bi-weekly, or monthly.
+                  schedule - weekly, weekly, or monthly.
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
                   <div className="flex items-center text-sm text-gray-600">
-                    <Calendar className="h-4 w-4 text-[#28A745] mr-2" />
+                    <Calendar className="h-4 w-4 text-[#007BFF] mr-2" />
                     <span>Flexible scheduling to fit your lifestyle</span>
                   </div>
                 </div>
@@ -166,18 +166,20 @@ export default function HowItWorks() {
             {/* Phone mockup with different screens */}
             <div className="device-mockup phone mx-auto">
               <div className="screen">
-                {/* Header */}
-                <div className="bg-black text-white p-4">
-                  <h4 className="text-center font-medium">
-                    <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clensy-3YxRqAp8bxVkkiFlQmcTlgTeLxuJ4t.png"
-                      alt="Clensy Logo"
-                      width={80}
-                      height={30}
-                      className="mx-auto brightness-0 invert"
-                    />
-                  </h4>
-                </div>
+                {/* Header - only for booking and tracking tabs */}
+                {activeTab !== "notifications" && (
+                  <div className="bg-black text-white p-4">
+                    <h4 className="text-center font-medium">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clensy-3YxRqAp8bxVkkiFlQmcTlgTeLxuJ4t.png"
+                        alt="Clensy Logo"
+                        width={80}
+                        height={30}
+                        className="mx-auto brightness-0 invert"
+                      />
+                    </h4>
+                  </div>
+                )}
 
                 {/* Content based on active tab */}
                 {activeTab === "booking" && (
@@ -310,17 +312,13 @@ export default function HowItWorks() {
                     <div className="flex justify-between items-center mb-4">
                       <div className="flex items-center">
                         <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                          <Image
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clensy-3YxRqAp8bxVkkiFlQmcTlgTeLxuJ4t.png"
-                            alt="Clensy Logo"
-                            width={20}
-                            height={20}
-                            className="rounded-full"
-                          />
+                          <div className="font-bold text-xs">C</div>
                         </div>
                         <div className="ml-2">
                           <div className="font-medium text-sm">Clensy</div>
-                          <div className="text-xs text-[#28A745]">Online</div>
+                          <div className="text-xs text-[#28A745]">
+                            2 min ago
+                          </div>
                         </div>
                       </div>
                       <div className="text-xs text-gray-400">Today</div>
@@ -417,7 +415,7 @@ export default function HowItWorks() {
             >
               <div className="flex items-center justify-between mb-2">
                 <div className="text-sm text-gray-500">Customer Portal</div>
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <div className="w-2 h-2 rounded-full bg-[#007BFF]"></div>
               </div>
               <h4 className="text-lg font-medium mb-2">Stay updated</h4>
               <p className="text-sm text-gray-600">
@@ -425,7 +423,7 @@ export default function HowItWorks() {
                 directly through our customer portal.
               </p>
               <div className="mt-4 pt-4 border-t border-gray-100">
-                <div className="flex items-center text-[#28A745] text-sm">
+                <div className="flex items-center text-[#007BFF] text-sm">
                   <Smartphone className="h-4 w-4 mr-2" />
                   <span>Accessible from any device</span>
                 </div>

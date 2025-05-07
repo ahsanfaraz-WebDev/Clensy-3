@@ -171,24 +171,18 @@ export default function ChecklistSection() {
   // Interactive house floor plan
   const renderHouseFloorPlan = () => {
     return (
-      <div className="relative h-[500px] w-full bg-[#1A2526] rounded-lg overflow-hidden">
-        {/* Main floor plan container with black background */}
+      <div className="relative h-[500px] w-full rounded-lg overflow-hidden">
+        {/* Main floor plan container without black background */}
         <div className="absolute inset-0">
           {/* Background image */}
           <div className="w-full h-full relative">
-            <picture>
-              <source
-                media="(max-width:1200px)"
-                srcSet="https://transform.octanecdn.com/width/1200/https://octanecdn.com/maidprocom/maidprocom_964349301.png"
-              />
-              <Image
-                src="https://transform.octanecdn.com/width/1600/https://octanecdn.com/maidprocom/maidprocom_964349301.png"
-                alt="The 50-Point Checklist"
-                fill
-                className="object-contain"
-                priority
-              />
-            </picture>
+            <Image
+              src="/images/house.png"
+              alt="The 50-Point Checklist"
+              fill
+              className="object-contain"
+              priority
+            />
 
             {/* Interactive points */}
             <div
@@ -219,7 +213,7 @@ export default function ChecklistSection() {
                     >
                       <path
                         d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                        stroke={activeRoom === "living" ? "white" : "#28A745"}
+                        stroke={activeRoom === "living" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                     </svg>
@@ -235,7 +229,7 @@ export default function ChecklistSection() {
                 className={`point absolute ${
                   activeRoom === "kitchen" ? "active" : ""
                 }`}
-                style={{ left: "41.51%", top: "22.69%" }}
+                style={{ left: "47%", top: "30%" }}
                 onClick={() => setActiveRoom("kitchen")}
               >
                 <span className="point-label icon-plate-set">
@@ -256,12 +250,12 @@ export default function ChecklistSection() {
                         y="4"
                         width="16"
                         height="16"
-                        stroke={activeRoom === "kitchen" ? "white" : "#28A745"}
+                        stroke={activeRoom === "kitchen" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M4 8H20"
-                        stroke={activeRoom === "kitchen" ? "white" : "#28A745"}
+                        stroke={activeRoom === "kitchen" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                     </svg>
@@ -295,17 +289,17 @@ export default function ChecklistSection() {
                     >
                       <path
                         d="M4 18V12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12V18"
-                        stroke={activeRoom === "bedroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bedroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M2 18H22"
-                        stroke={activeRoom === "bedroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bedroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M6 11V8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8V11"
-                        stroke={activeRoom === "bedroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bedroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                     </svg>
@@ -321,7 +315,7 @@ export default function ChecklistSection() {
                 className={`point absolute ${
                   activeRoom === "bathroom" ? "active" : ""
                 }`}
-                style={{ left: "47.14%", top: "55.42%" }}
+                style={{ left: "40%", top: "70%" }}
                 onClick={() => setActiveRoom("bathroom")}
               >
                 <span className="point-label icon-vanity">
@@ -339,22 +333,22 @@ export default function ChecklistSection() {
                     >
                       <path
                         d="M4 8H20"
-                        stroke={activeRoom === "bathroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bathroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M8 8V20"
-                        stroke={activeRoom === "bathroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bathroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M16 8V20"
-                        stroke={activeRoom === "bathroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bathroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                       <path
                         d="M4 12H20"
-                        stroke={activeRoom === "bathroom" ? "white" : "#28A745"}
+                        stroke={activeRoom === "bathroom" ? "white" : "#007BFF"}
                         strokeWidth="2"
                       />
                     </svg>
@@ -394,6 +388,23 @@ export default function ChecklistSection() {
           </motion.p>
         </div>
 
+        {/* Cleaning Type buttons (moved to top) */}
+        <div className="flex justify-center mb-8 space-x-2 overflow-x-auto pb-2">
+          {["routine", "deep", "moving"].map((type) => (
+            <button
+              key={type}
+              onClick={() => setCleaningType(type)}
+              className={`px-6 py-2 rounded-full text-sm transition-all duration-300 font-montserrat font-medium ${
+                cleaningType === type
+                  ? "text-white bg-[#007BFF]"
+                  : "text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-200"
+              }`}
+            >
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </button>
+          ))}
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -429,7 +440,7 @@ export default function ChecklistSection() {
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
                     <motion.div
-                      className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center bg-[#28A745]"
+                      className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center bg-[#007BFF]"
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: index * 0.1 + 0.3, type: "spring" }}
@@ -467,23 +478,6 @@ export default function ChecklistSection() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Cleaning Type buttons (replaces room buttons) */}
-        <div className="flex justify-center mt-8 space-x-2 overflow-x-auto pb-2">
-          {["routine", "deep", "moving"].map((type) => (
-            <button
-              key={type}
-              onClick={() => setCleaningType(type)}
-              className={`px-6 py-2 rounded-full text-sm transition-all duration-300 font-montserrat font-medium ${
-                cleaningType === type
-                  ? "text-white bg-[#007BFF]"
-                  : "text-gray-700 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 border border-gray-200"
-              }`}
-            >
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </button>
-          ))}
-        </div>
       </div>
     </section>
   );

@@ -381,12 +381,9 @@ export default function RoutineCleaningPage() {
                 Schedule your cleaning service online in minutes. Choose your
                 preferred date and time that works for your schedule.
               </p>
-              <Link
-                href="/pricing"
-                className="text-black font-medium flex items-center hover:underline"
-              >
-                Book Now <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <div className="bg-blue-100 text-blue-700 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center w-48 cursor-default select-none">
+                Instant Online Pricing
+              </div>
             </div>
 
             {/* Step 2 - Enhanced */}
@@ -396,8 +393,8 @@ export default function RoutineCleaningPage() {
               </div>
               <div className="relative h-40 rounded-xl overflow-hidden mb-6 mt-2">
                 <Image
-                  src="https://images.unsplash.com/photo-1581578731548-c2086d79f9d4?q=80&w=400&auto=format&fit=crop"
-                  alt="Professional cleaning team"
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=800&auto=format&fit=crop"
+                  alt="Professional cleaning team at work"
                   fill
                   className="object-cover"
                 />
@@ -704,7 +701,7 @@ export default function RoutineCleaningPage() {
             >
               <div className="bg-blue-600 p-6">
                 <h3 className="text-xl font-bold text-white text-center">
-                  Bi-Weekly
+                  Weekly
                 </h3>
               </div>
               <div className="p-6">
@@ -883,7 +880,7 @@ export default function RoutineCleaningPage() {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden ring-2 ring-blue-500"
               >
                 <div className="bg-blue-700 p-6 text-center">
-                  <h3 className="text-2xl font-bold text-white">Bi-Weekly</h3>
+                  <h3 className="text-2xl font-bold text-white">Weekly</h3>
                   <p className="text-blue-100 mt-2">Our most popular option</p>
                 </div>
                 <div className="p-8">
@@ -1080,7 +1077,7 @@ export default function RoutineCleaningPage() {
                   </div>
                   <div>
                     <p className="font-semibold">Michael Chen</p>
-                    <p className="text-gray-500 text-sm">Bi-weekly Customer</p>
+                    <p className="text-gray-500 text-sm">Weekly Customer</p>
                   </div>
                 </div>
               </div>

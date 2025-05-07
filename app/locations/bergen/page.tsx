@@ -179,7 +179,7 @@ export default function BergenCountyPage() {
                 </li>
                 <li className="flex items-start">
                   <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Regular weekly and bi-weekly schedules</span>
+                  <span>Regular weekly schedules</span>
                 </li>
               </ul>
             </div>

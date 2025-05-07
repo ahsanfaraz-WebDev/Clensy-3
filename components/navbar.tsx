@@ -44,14 +44,15 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center h-full py-2">
             <Link href="/" className="flex items-center h-full">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clensy-3YxRqAp8bxVkkiFlQmcTlgTeLxuJ4t.png"
+                src="/images/clensy-logo.png"
                 alt="Clensy Logo"
-                width={70}
-                height={25}
+                width={110}
+                height={45}
                 style={{
-                  filter: logoFilter,
                   objectFit: "contain",
                   maxHeight: "100%",
+                  filter: logoFilter,
+                  transition: "all 0.3s ease",
                 }}
                 className="transition-all duration-300 h-full w-auto"
               />

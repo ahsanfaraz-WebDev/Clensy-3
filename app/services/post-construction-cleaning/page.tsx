@@ -97,12 +97,9 @@ export default function PostConstructionCleaningPage() {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Link
-                  href="/contact"
-                  className="bg-yellow-500 text-black hover:bg-yellow-400 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
-                >
-                  <span className="text-center w-full">Get a Free Quote</span>
-                </Link>
+                <div className="bg-yellow-100 text-yellow-700 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center w-48 cursor-default select-none">
+                  Free On-Site Estimates
+                </div>
 
                 <div className="flex items-center sm:mt-0 mt-4">
                   <div className="flex items-center text-white/90 mr-8">
@@ -167,8 +164,8 @@ export default function PostConstructionCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1582642880428-9962654efe7c?q=80&w=1470&auto=format&fit=crop"
-                alt="Debris removal"
+                src="https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=800&auto=format&fit=crop"
+                alt="Debris removal team"
                 fill
                 className="object-cover"
               />
@@ -234,8 +231,8 @@ export default function PostConstructionCleaningPage() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1582642467597-e6501ba650bf?q=80&w=1470&auto=format&fit=crop"
-                alt="Dust elimination"
+                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop"
+                alt="Dust elimination process"
                 fill
                 className="object-cover"
               />

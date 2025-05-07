@@ -81,13 +81,6 @@ export default function HeroSection() {
                     30-second pricing
                   </span>
                 </div>
-
-                <div className="flex items-center text-white/90">
-                  <Check className="h-5 w-5 mr-2 text-[#28A745]" />
-                  <span className="text-sm whitespace-nowrap">
-                    We never cancel
-                  </span>
-                </div>
               </div>
             </motion.div>
           </motion.div>

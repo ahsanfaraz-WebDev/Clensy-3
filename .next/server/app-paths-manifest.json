@@ -1,8 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/services/post-construction-cleaning/page": "app/services/post-construction-cleaning/page.js",
-  "/locations/bergen/page": "app/locations/bergen/page.js",
-  "/services/moving-cleaning/page": "app/services/moving-cleaning/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/services/extras/page": "app/services/extras/page.js"
+  "/page": "app/page.js"
 }

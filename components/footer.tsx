@@ -19,7 +19,7 @@ export default function Footer() {
   const headingColor = "text-white";
   const borderColor = "border-gray-800";
   const iconColor = "text-gray-400";
-  const hoverColor = "text-[#28A745]"; // Changed to green
+  const hoverColor = "text-[#007BFF]"; // Changed to blue
 
   return (
     <footer className={`py-16 ${bgColor} relative overflow-hidden`}>
@@ -56,7 +56,7 @@ export default function Footer() {
               <motion.a
                 href="#"
                 className={`${iconColor} hover:${hoverColor}`}
-                whileHover={{ scale: 1.2, color: "#28A745" }}
+                whileHover={{ scale: 1.2, color: "#007BFF" }}
               >
                 <span className="sr-only">Facebook</span>
                 <Facebook className="h-5 w-5" />
@@ -64,7 +64,7 @@ export default function Footer() {
               <motion.a
                 href="#"
                 className={`${iconColor} hover:${hoverColor}`}
-                whileHover={{ scale: 1.2, color: "#28A745" }}
+                whileHover={{ scale: 1.2, color: "#007BFF" }}
               >
                 <span className="sr-only">Instagram</span>
                 <Instagram className="h-5 w-5" />
@@ -72,7 +72,7 @@ export default function Footer() {
               <motion.a
                 href="#"
                 className={`${iconColor} hover:${hoverColor}`}
-                whileHover={{ scale: 1.2, color: "#28A745" }}
+                whileHover={{ scale: 1.2, color: "#007BFF" }}
               >
                 <span className="sr-only">Twitter</span>
                 <Twitter className="h-5 w-5" />

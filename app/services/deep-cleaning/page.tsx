@@ -75,12 +75,9 @@ export default function DeepCleaningPage() {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Link
-                  href="/contact"
-                  className="bg-white text-black hover:bg-white/90 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
-                >
-                  <span className="text-center w-full">Get a Free Quote</span>
-                </Link>
+                <div className="bg-blue-100 text-blue-700 px-8 py-3 rounded-full text-sm font-medium inline-flex items-center justify-center w-48 cursor-default select-none">
+                  Deep Cleaning Experts
+                </div>
 
                 <div className="flex items-center sm:mt-0 mt-4">
                   <div className="flex items-center text-white/90 mr-8">

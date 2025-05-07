@@ -49,49 +49,49 @@ export default function ComparisonSection() {
       feature: "Locally Owned and Operated",
       clensy: true,
       others: true,
-      icon: <Users className="w-5 h-5 text-[#28A745]" />,
+      icon: <Users className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 2,
       feature: "Over The Phone Estimates",
       clensy: true,
       others: false,
-      icon: <Clock className="w-5 h-5 text-[#28A745]" />,
+      icon: <Clock className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 3,
       feature: "Bonded and Insured",
       clensy: true,
       others: false,
-      icon: <ShieldCheck className="w-5 h-5 text-[#28A745]" />,
+      icon: <ShieldCheck className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 4,
       feature: "Environmentally Friendly",
       clensy: true,
       others: false,
-      icon: <Leaf className="w-5 h-5 text-[#28A745]" />,
+      icon: <Leaf className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 5,
       feature: "Customized Cleans",
       clensy: true,
       others: true,
-      icon: <HeartHandshake className="w-5 h-5 text-[#28A745]" />,
+      icon: <HeartHandshake className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 6,
       feature: "PRO Clean Promise",
       clensy: true,
       others: false,
-      icon: <Medal className="w-5 h-5 text-[#28A745]" />,
+      icon: <Medal className="w-5 h-5 text-[#007BFF]" />,
     },
     {
       id: 7,
       feature: "Background Checks",
       clensy: true,
       others: false,
-      icon: <BadgeCheck className="w-5 h-5 text-[#28A745]" />,
+      icon: <BadgeCheck className="w-5 h-5 text-[#007BFF]" />,
     },
   ];
 
@@ -173,7 +173,7 @@ export default function ComparisonSection() {
                 <div className="col-span-6 grid grid-cols-2">
                   {/* Clensy checkmark */}
                   <div className="py-5 flex justify-center items-center">
-                    <div className="w-8 h-8 bg-[#28A745] rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#007BFF] rounded-full flex items-center justify-center">
                       <Check className="h-5 w-5 text-white" />
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export default function ComparisonSection() {
                   {/* Independent maids checkmark or empty */}
                   <div className="py-5 flex justify-center items-center">
                     {item.others ? (
-                      <div className="w-8 h-8 bg-[#28A745] rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
                         <Check className="h-5 w-5 text-white" />
                       </div>
                     ) : (

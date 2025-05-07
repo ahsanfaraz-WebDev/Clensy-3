@@ -44,7 +44,7 @@ export default function ExtrasPage() {
       description: "Crystal clear windows inside and out",
       icon: <Sparkles className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1605604578744-fe0ee35c3c81?q=80&w=1470&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=800&auto=format&fit=crop",
       features: [
         "Interior and exterior window cleaning",
         "Screen cleaning and frame wiping",
@@ -58,7 +58,7 @@ export default function ExtrasPage() {
       description: "Thorough cleaning and sanitizing of refrigerators",
       icon: <Plus className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1580713860186-c5fde8179670?q=80&w=1424&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=800&auto=format&fit=crop",
       features: [
         "Empty and clean all shelves and drawers",
         "Sanitize interior surfaces",
@@ -72,7 +72,7 @@ export default function ExtrasPage() {
       description: "Deep cleaning for ovens and ranges",
       icon: <Plus className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1557310307-0caa23fca3e2?q=80&w=1470&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=800&auto=format&fit=crop",
       features: [
         "Removal of built-up grease and carbon",
         "Cleaning of racks, trays, and knobs",
@@ -105,7 +105,7 @@ export default function ExtrasPage() {
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1626436819821-df38d9eda0b9?q=80&w=1470&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1503389152951-9c3d0c6b7a5a?q=80&w=1470&auto=format&fit=crop"
             alt="A clean home with extras services"
             fill
             className="object-cover opacity-70"
@@ -155,12 +155,9 @@ export default function ExtrasPage() {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Link
-                  href="/contact"
-                  className="bg-blue-600 text-white hover:bg-blue-500 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
-                >
-                  <span className="text-center w-full">Get a Free Quote</span>
-                </Link>
+                <div className="bg-blue-100 text-blue-700 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center w-48 cursor-default select-none">
+                  Customizable Extras
+                </div>
 
                 <div className="flex items-center sm:mt-0 mt-4">
                   <div className="flex items-center text-white/90 mr-8">
