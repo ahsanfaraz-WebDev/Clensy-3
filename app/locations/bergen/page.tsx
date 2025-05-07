@@ -3,11 +3,17 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Check, MapPin, Phone, Clock, Calendar, Star } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Calendar,
+  ChevronRight,
+  Clock,
+  Mail,
+  Building,
+} from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import CTASection from "@/components/cta-section";
 
 export default function BergenCountyPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,8 +22,8 @@ export default function BergenCountyPage() {
     setIsLoaded(true);
   }, []);
 
-  // Towns in Bergen County
-  const towns = [
+  // Service areas in Bergen County
+  const serviceAreas = [
     "Allendale",
     "Alpine",
     "Bergenfield",
@@ -43,531 +49,287 @@ export default function BergenCountyPage() {
     "Hackensack",
     "Harrington Park",
     "Hasbrouck Heights",
-    "Haworth",
-    "Hillsdale",
-    "Ho-Ho-Kus",
-    "Leonia",
-    "Little Ferry",
-    "Lodi",
-    "Lyndhurst",
-    "Mahwah",
-    "Maywood",
-    "Midland Park",
   ];
 
   return (
-    <main className="overflow-x-hidden">
-      <Navbar />
+    <main className="bg-gradient-to-b from-gray-900 to-black min-h-screen">
+      {/* Navbar with fixed position */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 to-black shadow-xl">
+        <Navbar />
+      </div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] bg-black pt-16">
-        {/* Background image with overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?q=80&w=2069&auto=format&fit=crop"
-            alt="Bergen County New Jersey"
-            fill
-            className="object-cover opacity-70"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
-        </div>
+      {/* Hero Section with Full-Width Image */}
+      <div className="relative h-[50vh] w-full mt-[80px]">
+        <Image
+          src="https://images.unsplash.com/photo-1611516491426-03025e6043c8?q=80&w=2069&auto=format&fit=crop"
+          alt="Bergen County Skyline"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[calc(85vh-64px)]">
-            {/* Text content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="inline-block mb-6 px-6 py-2 bg-blue-600 rounded-lg"
-              >
-                <span className="text-white font-semibold text-sm uppercase tracking-wider">
-                  Serving Bergen County, NJ
-                </span>
-              </motion.div>
-
-              <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6 hero-text-shadow">
-                Premium Cleaning Services <br />
-                in <span className="text-blue-400">Bergen County</span>
-              </h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="text-lg text-white/80 mb-8 max-w-xl"
-              >
-                Providing exceptional cleaning services to homes and businesses
-                throughout Bergen County. From Hackensack to Mahwah, our
-                professional cleaners deliver spotless results with every visit.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <Link
-                  href="/contact"
-                  className="bg-blue-600 text-white hover:bg-blue-500 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center transition-all duration-300 w-48"
-                >
-                  <span className="text-center w-full">Get a Free Quote</span>
-                </Link>
-
-                <div className="flex items-center sm:mt-0 mt-4">
-                  <div className="flex items-center text-white/90 mr-8">
-                    <Clock className="h-5 w-5 mr-2 text-blue-400" />
-                    <span className="text-sm whitespace-nowrap">
-                      Fast Response
-                    </span>
-                  </div>
-
-                  <div className="flex items-center text-white/90">
-                    <Star className="h-5 w-5 mr-2 text-blue-400" />
-                    <span className="text-sm whitespace-nowrap">
-                      5-Star Service
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Right side - Empty space for better balance */}
-            <div className="hidden md:block"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Areas Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Areas We Serve in Bergen County
-            </h2>
-            <p className="text-lg text-gray-600">
-              Our professional cleaning teams provide exceptional service to
-              homes and businesses throughout Bergen County, New Jersey.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <div className="flex items-start mb-6">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Eastern Bergen</h3>
-                  <p className="text-gray-600">
-                    Including Fort Lee, Englewood, Hackensack, Teaneck, and
-                    surrounding communities.
-                  </p>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Same-day service available</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Regular weekly schedules</span>
-                </li>
-              </ul>
+        {/* Hero Content */}
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+              Bergen County
+            </h1>
+            <div className="flex items-center text-gray-300 mb-6">
+              <MapPin className="h-5 w-5 text-blue-400 mr-2" />
+              <p>600 Kinderkamack Road, Suite 200, Oradell, NJ 07649</p>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <div className="flex items-start mb-6">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Northern Bergen</h3>
-                  <p className="text-gray-600">
-                    Including Mahwah, Ramsey, Allendale, Wyckoff, and
-                    surrounding communities.
-                  </p>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Flexible scheduling options</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Specialized services for larger homes</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <div className="flex items-start mb-6">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <MapPin className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Southern Bergen</h3>
-                  <p className="text-gray-600">
-                    Including Rutherford, Lyndhurst, North Arlington, and
-                    surrounding communities.
-                  </p>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Commercial and residential services</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0" />
-                  <span>Move-in/move-out cleaning specialists</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold mb-6 text-center">
-              Communities We Serve
-            </h3>
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-                {towns.map((town, index) => (
-                  <div key={index} className="flex items-center">
-                    <Check className="h-4 w-4 mr-2 text-blue-600 flex-shrink-0" />
-                    <span className="text-sm">{town}</span>
-                  </div>
-                ))}
-                <div className="flex items-center">
-                  <span className="text-sm text-blue-600 font-medium">
-                    And many more...
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Services in Bergen County
-            </h2>
-            <p className="text-lg text-gray-600">
-              From regular maintenance to specialized cleaning, we offer
-              comprehensive solutions for homes and businesses throughout Bergen
-              County.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-2xl transition-all duration-300 hover:shadow-md">
-              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-7 w-7 text-blue-600"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Residential Cleaning</h3>
-              <p className="text-gray-600 mb-4">
-                Keep your Bergen County home spotless with our comprehensive
-                residential cleaning services, customized to your specific
-                needs.
-              </p>
+            <div className="flex flex-wrap gap-4">
               <Link
-                href="/services/routine-cleaning"
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors flex items-center"
+                href="https://maps.google.com/?q=600+Kinderkamack+Road+Oradell+NJ+07649"
+                target="_blank"
+                className="inline-block px-8 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
               >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                GET DIRECTIONS
               </Link>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl transition-all duration-300 hover:shadow-md">
-              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-7 w-7 text-blue-600"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Commercial Cleaning</h3>
-              <p className="text-gray-600 mb-4">
-                Maintain a professional environment in your Bergen County
-                business with our reliable commercial cleaning services.
-              </p>
-              <Link
-                href="/services/office-cleaning"
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors flex items-center"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl transition-all duration-300 hover:shadow-md">
-              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-7 w-7 text-blue-600"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Specialized Cleaning</h3>
-              <p className="text-gray-600 mb-4">
-                From post-construction cleanup to deep cleaning services, we
-                offer specialized solutions for unique cleaning needs throughout
-                Bergen County.
-              </p>
-              <Link
-                href="/services/deep-cleaning"
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors flex items-center"
-              >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Bergen County Residents Choose Us
-            </h2>
-            <p className="text-lg text-white/80">
-              Discover why we're the trusted cleaning service for homes and
-              businesses throughout Bergen County.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-              <div className="bg-blue-600/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
-                <Star className="h-6 w-6 text-blue-300" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">
-                Bergen County's Best
-              </h3>
-              <p className="text-white/80">
-                We're proud to be highly rated by homeowners and businesses
-                throughout Bergen County, with a reputation for excellence and
-                reliability.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-              <div className="bg-blue-600/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
-                <Clock className="h-6 w-6 text-blue-300" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Prompt & Reliable</h3>
-              <p className="text-white/80">
-                We understand Bergen County's busy lifestyle. Our punctual,
-                dependable service means you can focus on what matters most to
-                you.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
-              <div className="bg-blue-600/20 rounded-full w-14 h-14 flex items-center justify-center mb-6">
-                <Phone className="h-6 w-6 text-blue-300" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Local Expertise</h3>
-              <p className="text-white/80">
-                As a local company serving Bergen County, we understand the
-                specific needs of homes and businesses in the area, from
-                historic properties to modern apartments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              What Bergen County Says About Us
-            </h2>
-            <p className="text-lg text-gray-600">
-              Hear from our satisfied customers throughout Bergen County.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-              <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                "
-              </div>
-              <div className="flex items-center mb-4">
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-              </div>
-              <p className="text-gray-700 mb-6 z-10 relative">
-                "I've tried several cleaning services in Hackensack, but none
-                compare to Clensy. Their attention to detail is remarkable, and
-                my home always looks and smells amazing after they've been here.
-                Highly recommend!"
-              </p>
-              <div className="flex items-center">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 bg-blue-100 flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">JM</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Jennifer M.</p>
-                  <p className="text-gray-500 text-sm">Hackensack, NJ</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-              <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                "
-              </div>
-              <div className="flex items-center mb-4">
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-              </div>
-              <p className="text-gray-700 mb-6 z-10 relative">
-                "As a business owner in Fort Lee, I need reliable cleaning
-                services I can count on. Clensy has been cleaning our office for
-                over a year, and they're consistently excellent. Our workspace
-                is always pristine when we arrive in the morning."
-              </p>
-              <div className="flex items-center">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 bg-blue-100 flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-lg">RL</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Robert L.</p>
-                  <p className="text-gray-500 text-sm">Fort Lee, NJ</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready for a Cleaner Bergen County Home or Business?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Contact us today to schedule your cleaning service or get a free
-              quote.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
+                className="inline-flex items-center px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-md font-medium hover:bg-white/20 transition-colors"
               >
-                Get a Free Quote
-              </Link>
-              <Link
-                href="/pricing"
-                className="bg-gray-900 text-white hover:bg-gray-800 px-8 py-3 rounded-lg text-sm font-medium inline-flex items-center justify-center transition-all duration-300"
-              >
-                See Our Pricing
+                <Calendar className="mr-2 h-5 w-5" /> BOOK NOW
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Call to Action */}
-      <CTASection />
+      {/* Breadcrumb Navigation */}
+      <div className="bg-gradient-to-r from-gray-900 to-black py-4 border-y border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center text-sm text-gray-400">
+            <Link
+              href="/locations"
+              className="hover:text-blue-400 transition-colors"
+            >
+              All Locations
+            </Link>
+            <ChevronRight className="h-4 w-4 mx-2" />
+            <span className="text-white font-medium">Bergen County</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Column - Contact Info and Hours */}
+          <div className="lg:col-span-1 space-y-8">
+            {/* Contact Information Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+              <div className="p-6 border-b border-gray-700">
+                <h2 className="text-xl font-bold text-white">
+                  Contact Information
+                </h2>
+              </div>
+              <div className="p-6 space-y-6">
+                <div className="flex items-start">
+                  <Building className="h-5 w-5 text-blue-400 mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-gray-300 font-medium mb-1">Address</h3>
+                    <p className="text-white">
+                      600 Kinderkamack Road, Suite 200
+                    </p>
+                    <p className="text-white">Oradell, NJ 07649</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Phone className="h-5 w-5 text-blue-400 mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-gray-300 font-medium mb-1">Phone</h3>
+                    <a
+                      href="tel:201-555-7890"
+                      className="text-white hover:text-blue-400 transition-colors"
+                    >
+                      201-555-7890
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <Mail className="h-5 w-5 text-blue-400 mr-3 mt-1" />
+                  <div>
+                    <h3 className="text-gray-300 font-medium mb-1">Email</h3>
+                    <a
+                      href="mailto:bergen@clensy.com"
+                      className="text-white hover:text-blue-400 transition-colors"
+                    >
+                      bergen@clensy.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="pt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-block w-full py-3 bg-blue-600 text-white rounded-md text-center font-medium hover:bg-blue-700 transition-colors"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Hours Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+              <div className="p-6 border-b border-gray-700">
+                <h2 className="text-xl font-bold text-white flex items-center">
+                  <Clock className="h-5 w-5 text-blue-400 mr-2" />
+                  Hours of Operation
+                </h2>
+              </div>
+              <div className="p-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Monday</span>
+                    <span className="text-white">8:00 am - 6:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Tuesday</span>
+                    <span className="text-white">8:00 am - 6:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Wednesday</span>
+                    <span className="text-white">8:00 am - 6:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Thursday</span>
+                    <span className="text-white">8:00 am - 6:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Friday</span>
+                    <span className="text-white">8:00 am - 6:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Saturday</span>
+                    <span className="text-white">10:00 am - 2:00 pm</span>
+                  </div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-300 font-medium">Sunday</span>
+                    <span className="text-white">Closed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Map and Description */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Interactive Map */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+              <div className="p-6 border-b border-gray-700">
+                <h2 className="text-xl font-bold text-white">Our Location</h2>
+              </div>
+              <div className="relative h-[400px] w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1569336415962-a4bd9f69c07b?q=80&w=2069&auto=format&fit=crop"
+                  alt="Bergen County Map"
+                  fill
+                  className="object-cover z-10"
+                />
+
+                {/* Map Overlay with Pin */}
+                <div className="absolute inset-0 bg-blue-900/20 z-20"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-xl animate-pulse">
+                      <MapPin className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 translate-y-full bg-white px-4 py-2 rounded-full shadow-lg whitespace-nowrap">
+                      <span className="font-semibold text-gray-800">
+                        Oradell, NJ
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Get Directions Button */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 px-6 flex justify-center z-30">
+                  <Link
+                    href="https://maps.google.com/?q=600+Kinderkamack+Road+Oradell+NJ+07649"
+                    target="_blank"
+                    className="flex items-center font-medium hover:text-blue-200 transition-colors"
+                  >
+                    <MapPin className="h-5 w-5 mr-2" /> GET DIRECTIONS
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* About This Location */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+              <div className="p-6 border-b border-gray-700">
+                <h2 className="text-xl font-bold text-white">
+                  About Our Bergen County Cleaning Services
+                </h2>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  Our Bergen County location provides professional cleaning
+                  services for both residential and commercial clients
+                  throughout the area. Whether you need routine cleaning, deep
+                  cleaning, or specialized services, our experienced team is
+                  ready to exceed your expectations.
+                </p>
+                <p className="text-gray-300 mb-6 leading-relaxed">
+                  We proudly serve all communities in Bergen County with prompt,
+                  reliable service and competitive rates. Contact us today to
+                  schedule an appointment or learn more about our services.
+                </p>
+                <div>
+                  <Link
+                    href="/contact"
+                    className="inline-block px-8 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                  >
+                    Contact Us Today
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service Areas Section */}
+        <div className="mt-12">
+          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl shadow-xl overflow-hidden">
+            <div className="p-6 border-b border-gray-700">
+              <h2 className="text-xl font-bold text-white">
+                Service Areas in Bergen County
+              </h2>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {serviceAreas.map((area) => (
+                  <div
+                    key={area}
+                    className="flex items-center py-3 px-4 bg-gray-700/50 border border-gray-700 rounded-lg hover:bg-blue-900/20 hover:border-blue-500/50 transition-all"
+                  >
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                    <span className="text-white">{area}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </main>

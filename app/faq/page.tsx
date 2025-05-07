@@ -310,27 +310,6 @@ export default function FAQPage() {
                 booking process, and pricing. Can't find what you're looking
                 for? Contact us directly for personalized assistance.
               </motion.p>
-
-              {/* Search box */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="relative max-w-xl mx-auto"
-              >
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search for answers..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-6 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-12 transition-all"
-                  />
-                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/60">
-                    <Search className="h-5 w-5" />
-                  </div>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -340,16 +319,31 @@ export default function FAQPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            {/* Category navigation */}
-            <div className="mb-12 overflow-x-auto pb-4">
-              <div className="flex space-x-2 min-w-max">
-                {categories.map((category) => (
+            {/* Category navigation - redesigned to be more visually appealing */}
+            <div className="mb-16">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {categories.slice(0, 3).map((category) => (
                   <button
                     key={category.id}
                     onClick={() => setActiveCategory(category.id)}
-                    className={`px-6 py-3 rounded-full text-sm font-medium transition-all ${
+                    className={`px-6 py-4 rounded-xl text-sm font-medium transition-all flex items-center justify-center ${
                       activeCategory === category.id
-                        ? "bg-blue-600 text-white"
+                        ? "bg-blue-600 text-white shadow-md"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                {categories.slice(3).map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`px-6 py-4 rounded-xl text-sm font-medium transition-all flex items-center justify-center ${
+                      activeCategory === category.id
+                        ? "bg-blue-600 text-white shadow-md"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >

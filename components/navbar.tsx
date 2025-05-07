@@ -21,7 +21,8 @@ export default function Navbar() {
   }, []);
 
   // Calculate background opacity based on scroll position
-  const bgOpacity = Math.min(scrollPosition / 200, 0.9);
+  // Start with a minimum opacity of 0.1 to ensure navbar is always visible
+  const bgOpacity = Math.max(0.1, Math.min(scrollPosition / 200, 0.95));
   const textColor = scrollPosition > 100 ? "text-black" : "text-white";
   const logoFilter = scrollPosition > 100 ? "" : "brightness(0) invert(1)";
   const buttonBg =
@@ -36,6 +37,7 @@ export default function Navbar() {
         WebkitBackdropFilter: "blur(10px)",
         borderBottom:
           scrollPosition > 50 ? "1px solid rgba(0, 0, 0, 0.1)" : "none",
+        boxShadow: scrollPosition > 50 ? "0 2px 10px rgba(0,0,0,0.05)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
