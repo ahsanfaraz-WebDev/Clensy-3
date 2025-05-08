@@ -169,7 +169,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/company/checklist"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   50-Point Checklist
@@ -177,7 +177,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/company/about"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   About Us

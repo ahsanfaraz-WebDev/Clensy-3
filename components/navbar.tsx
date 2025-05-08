@@ -203,14 +203,14 @@ export default function Navbar() {
                   <ul className="space-y-2">
                     <li>
                       <Link
-                        href="/checklist"
+                        href="/company/checklist"
                         className="apple-dropdown-link block"
                       >
                         50-Point Checklist
                       </Link>
                     </li>
                     <li>
-                      <Link href="/about" className="apple-dropdown-link block">
+                      <Link href="/company/about" className="apple-dropdown-link block">
                         About Us
                       </Link>
                     </li>

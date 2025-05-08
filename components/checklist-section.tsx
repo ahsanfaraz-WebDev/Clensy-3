@@ -457,7 +457,7 @@ export default function ChecklistSection() {
 
             <div className="mt-4">
               <Link
-                href="/checklist"
+                href="/company/checklist"
                 className="text-[#007BFF] border border-[#007BFF] hover:bg-[#007BFF]/10 px-6 py-2 rounded-full text-sm font-medium inline-flex items-center transition-all duration-300"
               >
                 View Full 50-Point Checklist

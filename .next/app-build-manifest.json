@@ -11,20 +11,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/locations/layout": [
+    "/company/checklist/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/locations/layout.js"
-    ],
-    "/locations/hudson/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/locations/hudson/page.js"
-    ],
-    "/locations/union/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/locations/union/page.js"
+      "static/chunks/app/company/checklist/page.js"
     ]
   }
 }
