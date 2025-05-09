@@ -11,10 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/company/checklist/page": [
+    "/services/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/company/checklist/page.js"
+      "static/chunks/app/services/layout.js"
+    ],
+    "/services/medical-cleaning/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/services/medical-cleaning/page.js"
     ]
   }
 }

@@ -317,62 +317,46 @@ export default function HowItWorks() {
                         <div className="ml-2">
                           <div className="font-medium text-sm">Clensy</div>
                           <div className="text-xs text-[#28A745]">
-                            2 min ago
+                            Active now
                           </div>
                         </div>
                       </div>
-                      <div className="text-xs text-gray-400">Today</div>
+                      <Smartphone className="h-4 w-4 text-gray-400" />
                     </div>
 
                     <div className="space-y-3">
-                      {/* Message bubbles */}
-                      <div className="flex justify-end">
-                        <div className="bg-[#007BFF] text-white p-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
-                          Hi! Just wanted to confirm my cleaning appointment for
-                          today.
+                      {/* Yesterday message */}
+                      <div className="text-center my-2">
+                        <div className="text-xs text-gray-400">
+                          Yesterday 11:00 AM
                         </div>
                       </div>
 
                       <div className="flex justify-start">
                         <div className="bg-gray-200 p-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
-                          Hello! Yes, your cleaning is scheduled for today
-                          between 8:00-10:00 AM. We'll send you a notification
-                          when your cleaner is on the way.
+                          Hey! Your next cleaning is scheduled for tomorrow with
+                          an arrival time between 8:00am and 10:00am
                         </div>
                       </div>
 
+                      {/* Today message */}
                       <div className="text-center my-2">
                         <div className="text-xs text-gray-400">
-                          2 hours later
+                          Today 7:45 AM
                         </div>
                       </div>
 
                       <div className="flex justify-start">
-                        <div className="bg-gray-200 p-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm flex flex-col">
-                          <span>
-                            Your cleaner is on the way and should be there in 20
-                            minutes. See you soon!
-                          </span>
-                          <span className="text-xs text-gray-500 self-end mt-1">
-                            8:32 AM
-                          </span>
+                        <div className="bg-gray-200 p-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm">
+                          Your cleaner is on the way and should be there in 20
+                          minutes. See you soon!
                         </div>
                       </div>
 
-                      <div className="text-center my-2">
-                        <div className="text-xs text-gray-400">
-                          25 minutes later
-                        </div>
-                      </div>
-
-                      <div className="flex justify-start">
-                        <div className="bg-gray-200 p-3 rounded-2xl rounded-tl-sm max-w-[80%] text-sm flex flex-col">
-                          <span>
-                            Maria has arrived at your home and started cleaning.
-                          </span>
-                          <span className="text-xs text-gray-500 self-end mt-1">
-                            8:55 AM
-                          </span>
+                      {/* Client's response */}
+                      <div className="flex justify-end">
+                        <div className="bg-[#007BFF] text-white p-3 rounded-2xl rounded-tr-sm max-w-[80%] text-sm">
+                          Thanks so much, she just got here!
                         </div>
                       </div>
 

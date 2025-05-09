@@ -288,7 +288,7 @@ export default function AirbnbCleaningPage() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1562184552-997c461abbe6?q=80&w=1470&auto=format&fit=crop"
+                src="https://www.bellacollina.com/hs-fs/hubfs/Real%20Estate/Pre-Designed%20Portfolio/Ibiza%201432/Ibiza1432B_masterbath.jpg?width=1060&height=707&name=Ibiza1432B_masterbath.jpg"
                 alt="Pristine bathroom"
                 fill
                 className="object-cover"
@@ -395,7 +395,7 @@ export default function AirbnbCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=500&auto=format&fit=crop"
+                      src="https://i.pinimg.com/736x/3f/e3/26/3fe326d3b809fb1057d175c221d08dd3.jpg"
                       alt="Before cleaning - messy kitchen"
                       fill
                       className="object-cover"
@@ -479,121 +479,6 @@ export default function AirbnbCleaningPage() {
                 exceptional first impression that leads to positive reviews and
                 repeat bookings.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Reviews */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              What Hosts Say
-            </h2>
-            <p className="text-lg text-gray-600">
-              Hear from Airbnb hosts who have transformed their rental business
-              with our cleaning services.
-            </p>
-          </div>
-
-          <div className="relative px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "Since using Clensy for my Airbnb cleaning, my 5-star
-                  cleanliness ratings increased by 30%. They're thorough,
-                  reliable, and guests constantly comment on how immaculate the
-                  space is."
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Emma Thompson</p>
-                    <p className="text-gray-500 text-sm">Airbnb Superhost</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "Managing multiple listings became so much easier with
-                  Clensy's Airbnb cleaning service. Their turnover cleaning is
-                  quick, thorough, and they always leave special touches that
-                  delight our guests."
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">James Wilson</p>
-                    <p className="text-gray-500 text-sm">Property Manager</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

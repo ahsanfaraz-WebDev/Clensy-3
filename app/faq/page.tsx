@@ -319,6 +319,37 @@ export default function FAQPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
+            {/* Global Search Bar */}
+            <div className="mb-12">
+              <div className="relative max-w-lg mx-auto">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search all FAQs across services..."
+                  className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                  >
+                    <span className="text-gray-400 hover:text-gray-600">
+                      Clear
+                    </span>
+                  </button>
+                )}
+              </div>
+              {searchQuery && (
+                <div className="mt-2 text-center text-sm text-gray-600">
+                  Showing results for "{searchQuery}" across all FAQ categories
+                </div>
+              )}
+            </div>
+
             {/* Category navigation - redesigned to be more visually appealing */}
             <div className="mb-16">
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

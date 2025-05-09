@@ -225,7 +225,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/locations/bergen"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   Bergen County
@@ -233,7 +233,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/locations/hudson"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   Hudson County
@@ -241,7 +241,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/locations/essex"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   Essex County
@@ -249,7 +249,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/locations/passaic"
+                  className={`text-sm ${textColor} hover:${hoverColor}`}
+                >
+                  Passaic County
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/locations/union"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
                   Union County
@@ -257,18 +265,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/locations/morris"
                   className={`text-sm ${textColor} hover:${hoverColor}`}
                 >
-                  Middlesex County
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className={`text-sm ${textColor} hover:${hoverColor}`}
-                >
-                  Monmouth County
+                  Morris County
                 </Link>
               </li>
             </ul>

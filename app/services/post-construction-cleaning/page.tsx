@@ -46,7 +46,7 @@ export default function PostConstructionCleaningPage() {
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1532323544230-7191fd51bc1b?q=80&w=2069&auto=format&fit=crop"
+            src="https://progressivecleaningcorp.com/wp-content/uploads/2023/08/Post-Construction-Cleaning-Alexandria-VA.jpg"
             alt="Post-construction site"
             fill
             className="object-cover opacity-70"
@@ -164,7 +164,7 @@ export default function PostConstructionCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=800&auto=format&fit=crop"
+                src="https://luxurycleaningny.com/wp-content/uploads/2021/07/post-construction-cleaning-services-1080x675.jpg"
                 alt="Debris removal team"
                 fill
                 className="object-cover"
@@ -231,7 +231,7 @@ export default function PostConstructionCleaningPage() {
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=800&auto=format&fit=crop"
+                src="https://s1.kaercher-media.com/media/image/selection/127074/d0/bauendreinigung-header.webp"
                 alt="Dust elimination process"
                 fill
                 className="object-cover"
@@ -243,7 +243,7 @@ export default function PostConstructionCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1629079447777-1e605162dc8d?q=80&w=1470&auto=format&fit=crop"
+                src="https://fmccompanies.com/wp-content/uploads/2021/08/floorvac-1024x637.jpeg"
                 alt="Surface finishing"
                 fill
                 className="object-cover"
@@ -298,7 +298,7 @@ export default function PostConstructionCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=500&auto=format&fit=crop"
+                      src="https://mycleaningangel.com/wp-content/uploads/2024/03/process-of-post-construction-cleaning-1080x675.jpg"
                       alt="Before cleaning - construction debris"
                       fill
                       className="object-cover"
@@ -337,7 +337,7 @@ export default function PostConstructionCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=500&auto=format&fit=crop"
+                      src="https://www.cleannationco.com/wp-content/uploads/2023/03/Post-Construction-Cleaning-scaled-1-1080x675.jpeg"
                       alt="Before cleaning - construction kitchen"
                       fill
                       className="object-cover"
@@ -350,7 +350,7 @@ export default function PostConstructionCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=500&auto=format&fit=crop"
+                      src="https://luxurycleaningny.com/wp-content/uploads/2023/02/Post-Construction-Cleaning-Checklist-by-Luxury-Cleaning-NY.jpg"
                       alt="After cleaning - pristine kitchen"
                       fill
                       className="object-cover"
@@ -448,113 +448,104 @@ export default function PostConstructionCleaningPage() {
       </section>
 
       {/* Customer Reviews - Following Deep Cleaning layout */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-600">
-              Hear from contractors and homeowners who've used our
-              post-construction cleaning services.
+            <p className="text-lg text-white/80">
+              Hear from our satisfied clients about their experience with our
+              post-construction cleaning service.
             </p>
           </div>
 
-          <div className="relative px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "The attention to detail was incredible. My construction site
+                has never felt so clean and fresh. I've tried other services
+                before, but Clensy's post-construction cleaning is in a league
+                of its own."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "As a contractor, I need reliable cleaning services to make my
-                  renovation projects shine. Clensy's team is thorough,
-                  detail-oriented, and always meets tight deadlines. They've
-                  become an essential part of my project delivery process."
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1536763843054-126cc2d9d3b0?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Robert Johnson</p>
-                    <p className="text-gray-500 text-sm">General Contractor</p>
-                  </div>
+                <div>
+                  <p className="font-semibold">Sarah Johnson</p>
+                  <p className="text-white/60 text-sm">New York, NY</p>
                 </div>
               </div>
+            </div>
 
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "I've been using Clensy for multiple construction projects now,
+                and it's been a game-changer. The consistency and reliability of
+                their service is outstanding. My sites always look immaculate."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "After a major kitchen renovation, I was overwhelmed by the
-                  dust and debris. Clensy transformed our space from a
-                  construction site to a spotless kitchen in just one day! I
-                  couldn't believe the difference."
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Sarah Williams</p>
-                    <p className="text-gray-500 text-sm">Homeowner</p>
-                  </div>
+                <div>
+                  <p className="font-semibold">Michael Rodriguez</p>
+                  <p className="text-white/60 text-sm">Chicago, IL</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "As a busy contractor, having Clensy's post-construction
+                cleaning service has been life-changing. I hand over spotless
+                properties every time, and their staff is always professional
+                and thorough."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">Jennifer Park</p>
+                  <p className="text-white/60 text-sm">Boston, MA</p>
                 </div>
               </div>
             </div>

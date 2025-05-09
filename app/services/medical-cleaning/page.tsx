@@ -270,50 +270,13 @@ export default function MedicalCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2052&auto=format&fit=crop"
+                src="https://media.istockphoto.com/id/1298375809/photo/empty-luxury-modern-hospital-room.jpg?s=612x612&w=0&k=20&c=COJYNIiGvKfgiNITdE2IZmHo31tzUewK64jwuv8glgA="
                 alt="Medical laboratory cleaning"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h3 className="text-2xl font-bold mb-4">
-                Laboratories & Specialized Areas
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Customized cleaning protocols for sensitive laboratory
-                environments that require precision cleaning and sanitization.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>
-                    Specialized cleaning of laboratory surfaces and equipment
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>
-                    Adherence to strict contamination prevention protocols
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>
-                    Careful handling of sensitive instruments and technology
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>Compliance with laboratory-specific regulations</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Item 4 - Right image, left text */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
               <h3 className="text-2xl font-bold mb-4">
                 Restrooms & Common Areas
               </h3>
@@ -345,18 +308,11 @@ export default function MedicalCleaningPage() {
                 <li className="flex items-start">
                   <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
                   <span>
+                    {" "}
                     Cleaning log maintenance for compliance verification
                   </span>
                 </li>
               </ul>
-            </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="https://images.unsplash.com/photo-1568484601142-8cbe882ca900?q=80&w=1974&auto=format&fit=crop"
-                alt="Medical facility restroom"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
@@ -418,152 +374,183 @@ export default function MedicalCleaningPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               What Our Healthcare Clients Say
             </h2>
-            <p className="text-lg text-gray-600">
-              Discover why healthcare facilities trust us with their specialized
-              cleaning needs.
+            <p className="text-lg text-white/80">
+              Hear from our satisfied healthcare clients about their experience
+              with our medical facility cleaning service.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-gray-50 p-8 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#007BFF] flex items-center justify-center text-white font-bold">
-                    D
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold">Dr. Michael Chen</h4>
-                  <p className="text-sm text-gray-500">
-                    Medical Director, Northside Medical Center
-                  </p>
-                </div>
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
               </div>
-              <div className="flex mb-4">
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-              </div>
-              <p className="text-gray-600">
+              <p className="text-white/80 mb-6">
                 "Clensy's understanding of healthcare facility cleaning is
                 unmatched. They consistently maintain our clinic to the highest
                 standards, giving our staff and patients confidence in our
                 infection control practices."
               </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#007BFF] flex items-center justify-center text-white font-bold">
-                    S
-                  </div>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
-                  <h4 className="font-bold">Sarah Johnson, RN</h4>
-                  <p className="text-sm text-gray-500">
-                    Facility Manager, Eastside Dental Group
+                  <p className="font-semibold">Dr. Michael Chen</p>
+                  <p className="text-white/60 text-sm">
+                    Northside Medical Center
                   </p>
                 </div>
               </div>
-              <div className="flex mb-4">
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
               </div>
-              <p className="text-gray-600">
+              <p className="text-white/80 mb-6">
                 "Since partnering with Clensy, our infection control metrics
                 have improved significantly. Their attention to detail in our
                 operatories and sterilization areas has been exceptional. I
                 appreciate their documentation and adherence to our protocols."
               </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">Sarah Johnson, RN</p>
+                  <p className="text-white/60 text-sm">Eastside Dental Group</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "Clensy provides the level of clean that our patients expect and
+                deserve. Their cleaning technicians understand the unique
+                requirements of medical environments, and their detailed
+                cleaning protocols have helped us maintain a safe and sanitary
+                facility for everyone."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">Dr. Rebecca Taylor</p>
+                  <p className="text-white/60 text-sm">
+                    Westview Medical Associates
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
-              Common questions about our healthcare facility cleaning services.
+            <p className="text-lg text-gray-600 text-center mb-12">
+              Learn more about our healthcare facility cleaning services.
             </p>
-          </div>
 
-          <div className="max-w-3xl mx-auto divide-y divide-gray-200">
-            {/* Question 1 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                What healthcare-specific certifications do your cleaners have?
-              </h3>
-              <p className="text-gray-600">
-                Our medical facility cleaning teams are certified in Bloodborne
-                Pathogen Safety (BBP), Healthcare Cleaning and Disinfection, and
-                Environmental Services in Healthcare Facilities. We also
-                maintain certifications from GBAC (Global Biorisk Advisory
-                Council) and follow CDC and OSHA guidelines.
-              </p>
-            </div>
+            <div className="space-y-8">
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  What healthcare-specific certifications do your cleaners have?
+                </h3>
+                <p className="text-gray-600">
+                  Our medical facility cleaning teams are certified in
+                  Bloodborne Pathogen Safety (BBP), Healthcare Cleaning and
+                  Disinfection, and Environmental Services in Healthcare
+                  Facilities. We also maintain certifications from GBAC (Global
+                  Biorisk Advisory Council) and follow CDC and OSHA guidelines.
+                </p>
+              </div>
 
-            {/* Question 2 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                How do you handle different areas with varying risk levels in
-                healthcare facilities?
-              </h3>
-              <p className="text-gray-600">
-                We implement zone-based cleaning protocols that categorize areas
-                by risk level (high, medium, and low). Each zone has specific
-                cleaning frequencies, disinfection products, and verification
-                procedures appropriate to the level of patient care and
-                contamination risk in that area.
-              </p>
-            </div>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  How do you handle different areas with varying risk levels in
+                  healthcare facilities?
+                </h3>
+                <p className="text-gray-600">
+                  We implement zone-based cleaning protocols that categorize
+                  areas by risk level (high, medium, and low). Each zone has
+                  specific cleaning frequencies, disinfection products, and
+                  verification procedures appropriate to the level of patient
+                  care and contamination risk in that area.
+                </p>
+              </div>
 
-            {/* Question 3 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                What infection control measures do you implement?
-              </h3>
-              <p className="text-gray-600">
-                Our comprehensive infection control program includes color-coded
-                microfiber systems to prevent cross-contamination, use of
-                EPA-registered hospital-grade disinfectants with appropriate
-                dwell times, electrostatic spraying for comprehensive surface
-                coverage, and detailed documentation of all cleaning and
-                disinfection activities.
-              </p>
-            </div>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  What infection control measures do you implement?
+                </h3>
+                <p className="text-gray-600">
+                  Our comprehensive infection control program includes
+                  color-coded microfiber systems to prevent cross-contamination,
+                  use of EPA-registered hospital-grade disinfectants with
+                  appropriate dwell times, electrostatic spraying for
+                  comprehensive surface coverage, and detailed documentation of
+                  all cleaning and disinfection activities.
+                </p>
+              </div>
 
-            {/* Question 4 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                Can you work around our patient schedules and facility
-                operations?
-              </h3>
-              <p className="text-gray-600">
-                Absolutely. We understand the unique operational requirements of
-                healthcare facilities. Our teams can work during off-hours,
-                overnight, or on rotating schedules to minimize disruption. We
-                also have rapid-response protocols for immediate cleaning needs
-                between patient visits or procedures.
-              </p>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  Can you work around our patient schedules and facility
+                  operations?
+                </h3>
+                <p className="text-gray-600">
+                  Absolutely. We understand the unique operational requirements
+                  of healthcare facilities. Our teams can work during off-hours,
+                  overnight, or on rotating schedules to minimize disruption. We
+                  also have rapid-response protocols for immediate cleaning
+                  needs between patient visits or procedures.
+                </p>
+              </div>
             </div>
           </div>
         </div>

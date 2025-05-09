@@ -283,8 +283,8 @@ export default function DeepCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1520038410233-7141be7e6f97?q=80&w=500&auto=format&fit=crop"
-                      alt="Before deep cleaning - messy kitchen"
+                      src="https://images.unsplash.com/photo-1578177154072-bbbd429d496f?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      alt="Before deep cleaning - dirty kitchen"
                       fill
                       className="object-cover"
                     />
@@ -296,7 +296,7 @@ export default function DeepCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1567767326925-e2047bf469d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="After deep cleaning - clean kitchen"
                       fill
                       className="object-cover"
@@ -322,7 +322,7 @@ export default function DeepCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop"
+                      src="https://media.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Apr2021/20210412_bathroom_unsplash%20%281%29.jpg?itok=uy8qjWPn"
                       alt="Before deep cleaning bathroom - dirty"
                       fill
                       className="object-cover"
@@ -335,7 +335,7 @@ export default function DeepCleaningPage() {
                 <div>
                   <div className="relative h-48 rounded-lg overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=500&auto=format&fit=crop"
                       alt="After deep cleaning bathroom - spotless"
                       fill
                       className="object-cover"
@@ -427,124 +427,112 @@ export default function DeepCleaningPage() {
         </div>
       </section>
 
-      {/* Customer Reviews - Different style from routine page */}
-      <section className="py-20 bg-white">
+      {/* Customer Reviews - Updated to match routine cleaning page style */}
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Customer Experiences
+              What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-600">
-              See what our customers say about their deep cleaning experiences.
+            <p className="text-lg text-white/80">
+              Hear from our satisfied clients about their experience with our
+              deep cleaning service.
             </p>
           </div>
 
-          <div className="relative px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "I couldn't believe the difference after Clensy's deep cleaning
+                service. Areas I didn't even notice were dirty are now spotless.
+                The attention to detail was incredible and it feels like we have
+                a brand new home!"
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "I couldn't believe the difference after Clensy's deep
-                  cleaning service. Areas I didn't even notice were dirty are
-                  now spotless. They cleaned behind appliances and inside
-                  cabinets - places I never have time for. Worth every penny!"
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Rebecca Thompson</p>
-                    <p className="text-gray-500 text-sm">
-                      Deep Cleaning Customer
-                    </p>
-                  </div>
+                <div>
+                  <p className="font-semibold">Rebecca Thompson</p>
+                  <p className="text-white/60 text-sm">Montclair, NJ</p>
                 </div>
               </div>
+            </div>
 
-              <div className="bg-gray-50 p-8 rounded-2xl shadow-sm relative">
-                <div className="absolute -top-4 -left-4 text-6xl text-gray-200">
-                  "
-                </div>
-                <div className="flex items-center mb-4">
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
-                  />
-                  <Star
-                    className="h-5 w-5 text-yellow-400"
-                    fill="currentColor"
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "We had Clensy do a deep clean before moving into our new home.
+                The previous owners had pets, and there was dust everywhere.
+                After the deep cleaning, it felt like a completely different
+                house - fresh, clean, and ready for our family."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-gray-700 mb-6 z-10 relative">
-                  "We had Clensy do a deep clean before moving into our new
-                  home. The previous owners had pets, and there was dust
-                  everywhere. After the deep cleaning, it felt like a completely
-                  different house - fresh, clean, and ready for our family."
-                </p>
-                <div className="flex items-center">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
-                      alt="Customer"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Daniel Morgan</p>
-                    <p className="text-gray-500 text-sm">New Homeowner</p>
-                  </div>
+                <div>
+                  <p className="font-semibold">Daniel Morgan</p>
+                  <p className="text-white/60 text-sm">Jersey City, NJ</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "I scheduled a deep cleaning after renovating my kitchen and
+                bathroom. The construction dust was everywhere! Clensy's team
+                removed every trace of dust and grime. Their deep cleaning
+                service is worth every penny for the results they deliver."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">Jennifer Park</p>
+                  <p className="text-white/60 text-sm">Hoboken, NJ</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-white">{/* Testimonials content */}</section>
 
       {/* Deep vs Regular Cleaning Comparison - Unique to Deep Cleaning */}
       <section className="py-24 bg-blue-50">

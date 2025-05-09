@@ -15,6 +15,8 @@ import {
   Plus,
   DollarSign,
   Timer,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -44,7 +46,7 @@ export default function ExtrasPage() {
       description: "Crystal clear windows inside and out",
       icon: <Sparkles className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=800&auto=format&fit=crop",
+        "https://lcdsupportservices.co.uk/wp-content/uploads/2022/06/LCD-Window-Cleaning-Broadway.jpg",
       features: [
         "Interior and exterior window cleaning",
         "Screen cleaning and frame wiping",
@@ -58,7 +60,7 @@ export default function ExtrasPage() {
       description: "Thorough cleaning and sanitizing of refrigerators",
       icon: <Plus className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?q=80&w=800&auto=format&fit=crop",
+        "https://www.tasteofhome.com/wp-content/uploads/2023/01/GettyImages-484299846.jpg",
       features: [
         "Empty and clean all shelves and drawers",
         "Sanitize interior surfaces",
@@ -72,7 +74,7 @@ export default function ExtrasPage() {
       description: "Deep cleaning for ovens and ranges",
       icon: <Plus className="h-5 w-5" />,
       image:
-        "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=800&auto=format&fit=crop",
+        "https://cdn.prod.website-files.com/6397d1f7c4e0e51d3bd5a80f/650a589d1e631adc7e916b04_Regular%20cleanings.webp",
       features: [
         "Removal of built-up grease and carbon",
         "Cleaning of racks, trays, and knobs",
@@ -105,7 +107,7 @@ export default function ExtrasPage() {
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1503389152951-9c3d0c6b7a5a?q=80&w=1470&auto=format&fit=crop"
+            src="https://static.vecteezy.com/system/resources/previews/037/280/967/non_2x/ai-generated-minimalist-vivid-advertisment-spring-cleaning-background-with-copy-space-free-photo.jpeg"
             alt="A clean home with extras services"
             fill
             className="object-cover opacity-70"
@@ -336,68 +338,162 @@ export default function ExtrasPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Step 1 */}
-            <div className="bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold">
-                1
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Phone Mockup */}
+            <div className="relative mx-auto">
+              <div className="device-mockup phone mx-auto">
+                <div className="screen">
+                  {/* Header */}
+                  <div className="bg-black text-white p-4">
+                    <h4 className="text-center font-medium">
+                      <Image
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clensy-3YxRqAp8bxVkkiFlQmcTlgTeLxuJ4t.png"
+                        alt="Clensy Logo"
+                        width={80}
+                        height={30}
+                        className="mx-auto brightness-0 invert"
+                      />
+                    </h4>
+                  </div>
+
+                  {/* App Content */}
+                  <div className="p-6">
+                    <h5 className="text-lg font-medium mb-6">
+                      Add Extra Services
+                    </h5>
+
+                    {/* Window Cleaning */}
+                    <div className="border-b border-gray-100 pb-4 mb-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <div className="text-blue-600 mr-3">
+                            <Sparkles className="h-5 w-5" />
+                          </div>
+                          <span className="font-medium">Window Cleaning</span>
+                        </div>
+                        <button className="bg-blue-100 text-blue-700 p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1 ml-8">
+                        $5 per window
+                      </p>
+                    </div>
+
+                    {/* Refrigerator Cleaning - Selected */}
+                    <div className="border border-blue-500 rounded-xl p-4 mb-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <div className="text-blue-600 mr-3">
+                            <Plus className="h-5 w-5" />
+                          </div>
+                          <span className="font-medium">
+                            Refrigerator Cleaning
+                          </span>
+                        </div>
+                        <div className="bg-blue-600 text-white p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                          <Check className="h-4 w-4" />
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1 ml-8">
+                        $35 per service
+                      </p>
+                    </div>
+
+                    {/* Oven Cleaning */}
+                    <div className="border-b border-gray-100 pb-4 mb-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <div className="text-blue-600 mr-3">
+                            <Plus className="h-5 w-5" />
+                          </div>
+                          <span className="font-medium">Oven Cleaning</span>
+                        </div>
+                        <button className="bg-blue-100 text-blue-700 p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1 ml-8">
+                        $50 per service
+                      </p>
+                    </div>
+
+                    {/* Cabinet Cleaning */}
+                    <div className="border-b border-gray-100 pb-4 mb-4">
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center">
+                          <div className="text-blue-600 mr-3">
+                            <Plus className="h-5 w-5" />
+                          </div>
+                          <span className="font-medium">Cabinet Cleaning</span>
+                        </div>
+                        <button className="bg-blue-100 text-blue-700 p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-sm text-gray-500 mt-1 ml-8">
+                        $45 per service
+                      </p>
+                    </div>
+
+                    {/* Continue Button */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium">
+                        Continue to Booking
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="relative h-40 rounded-xl overflow-hidden mb-6 mt-2">
-                <Image
-                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400&auto=format&fit=crop"
-                  alt="Browse available extras online"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Select Your Extras</h3>
-              <p className="text-gray-600 mb-4">
-                Browse our menu of extra services and select the ones that match
-                your needs. You can add them to any cleaning service.
-              </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold">
-                2
+            {/* Process Steps */}
+            <div className="space-y-10">
+              <div className="flex items-start">
+                <div className="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="font-bold">1</span>
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-xl font-bold mb-2">
+                    Browse Available Extras
+                  </h3>
+                  <p className="text-gray-600">
+                    Open our app or website and browse through our selection of
+                    premium add-on services that can be added to any cleaning
+                    appointment.
+                  </p>
+                </div>
               </div>
-              <div className="relative h-40 rounded-xl overflow-hidden mb-6 mt-2">
-                <Image
-                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop"
-                  alt="Schedule service with extras"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mb-4">Schedule Service</h3>
-              <p className="text-gray-600 mb-4">
-                Add your selected extras during the booking process, or contact
-                us to add them to an existing appointment.
-              </p>
-            </div>
 
-            {/* Step 3 */}
-            <div className="bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold">
-                3
+              <div className="flex items-start">
+                <div className="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="font-bold">2</span>
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-xl font-bold mb-2">Select Your Extras</h3>
+                  <p className="text-gray-600">
+                    Simply tap to add the services you want. You can add
+                    multiple extras to customize your cleaning experience
+                    exactly to your needs.
+                  </p>
+                </div>
               </div>
-              <div className="relative h-40 rounded-xl overflow-hidden mb-6 mt-2">
-                <Image
-                  src="https://images.unsplash.com/photo-1620912189865-1e8a33da4c5e?q=80&w=400&auto=format&fit=crop"
-                  alt="Enjoy premium extras service"
-                  fill
-                  className="object-cover"
-                />
+
+              <div className="flex items-start">
+                <div className="bg-blue-600 text-white rounded-full h-10 w-10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="font-bold">3</span>
+                </div>
+                <div className="ml-6">
+                  <h3 className="text-xl font-bold mb-2">
+                    Confirm and Schedule
+                  </h3>
+                  <p className="text-gray-600">
+                    Review your selections, proceed to schedule your
+                    appointment, and our specialized team will take care of
+                    everything during your service.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-4">
-                Enjoy Premium Results
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Our specialized team will ensure your extra services are
-                completed to the highest standard along with your regular
-                cleaning.
-              </p>
             </div>
           </div>
         </div>
@@ -410,153 +506,288 @@ export default function ExtrasPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Extras Pricing
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 mb-8">
               Transparent pricing for our most popular extra services.
             </p>
+            <div className="flex justify-center items-center text-sm text-gray-500">
+              <ArrowRight className="h-4 w-4 animate-pulse mr-2" />
+              <span>Scroll horizontally to see more pricing options</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Small Home Package */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-md border border-gray-100"
-            >
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <Sparkles className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Interior Windows</h3>
-                </div>
-              </div>
-              <div className="flex items-center mb-6">
-                <DollarSign className="h-5 w-5 text-gray-400" />
-                <span className="text-3xl font-bold">$5</span>
-                <span className="text-gray-500 ml-2">per window</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Interior glass and frame</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Window sill cleaning</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Streak-free finish</span>
-                </li>
-              </ul>
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
-              >
-                Add To Booking
-              </Link>
-            </motion.div>
+          <div className="relative">
+            <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-            {/* Medium Home Package */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-md border border-gray-100"
+            {/* Left Navigation Button */}
+            <button
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-lg z-20 hover:bg-blue-700 transition-all"
+              onClick={() => {
+                const container = document.querySelector(".scrollbar-hide");
+                if (container) {
+                  container.scrollBy({ left: -300, behavior: "smooth" });
+                }
+              }}
             >
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <Plus className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Inside Refrigerator</h3>
-                </div>
-              </div>
-              <div className="flex items-center mb-6">
-                <DollarSign className="h-5 w-5 text-gray-400" />
-                <span className="text-3xl font-bold">$35</span>
-                <span className="text-gray-500 ml-2">per service</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Complete emptying and organizing</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Shelf and drawer cleaning</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Interior and exterior wiping</span>
-                </li>
-              </ul>
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
-              >
-                Add To Booking
-              </Link>
-            </motion.div>
+              <ChevronLeft className="h-6 w-6" />
+            </button>
 
-            {/* Large Home Package */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-md border border-gray-100"
+            {/* Right Navigation Button */}
+            <button
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white rounded-full p-2 shadow-lg z-20 hover:bg-blue-700 transition-all"
+              onClick={() => {
+                const container = document.querySelector(".scrollbar-hide");
+                if (container) {
+                  container.scrollBy({ left: 300, behavior: "smooth" });
+                }
+              }}
             >
-              <div className="flex items-center mb-4">
-                <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                  <Plus className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">Oven Cleaning</h3>
-                </div>
-              </div>
-              <div className="flex items-center mb-6">
-                <DollarSign className="h-5 w-5 text-gray-400" />
-                <span className="text-3xl font-bold">$50</span>
-                <span className="text-gray-500 ml-2">per service</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Deep cleaning of interior</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Rack and tray cleaning</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
-                  <span>Door and glass cleaning</span>
-                </li>
-              </ul>
-              <Link
-                href="/contact"
-                className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
-              >
-                Add To Booking
-              </Link>
-            </motion.div>
-          </div>
+              <ChevronRight className="h-6 w-6" />
+            </button>
 
-          <div className="max-w-3xl mx-auto text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              All extra services can be added to any regular cleaning
-              appointment. Custom pricing available for multiple services.
-            </p>
-            <Link
-              href="/pricing"
-              className="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded-lg text-sm font-medium inline-flex items-center transition-all duration-300"
-            >
-              See Full Pricing <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            <div className="flex overflow-x-auto py-8 px-4 -mx-4 scrollbar-hide">
+              <div className="flex gap-6 px-4">
+                {/* Service 1 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex-shrink-0 w-80"
+                  whileHover={{
+                    y: -10,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <Sparkles className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Interior Windows</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <DollarSign className="h-5 w-5 text-gray-400" />
+                    <span className="text-3xl font-bold">$5</span>
+                    <span className="text-gray-500 ml-2">per window</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Interior glass and frame</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Window sill cleaning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Streak-free finish</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
+                  >
+                    Add To Booking
+                  </Link>
+                </motion.div>
+
+                {/* Service 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex-shrink-0 w-80"
+                  whileHover={{
+                    y: -10,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <Plus className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Inside Refrigerator</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <DollarSign className="h-5 w-5 text-gray-400" />
+                    <span className="text-3xl font-bold">$35</span>
+                    <span className="text-gray-500 ml-2">per service</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Complete emptying and organizing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Shelf and drawer cleaning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Interior and exterior wiping</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
+                  >
+                    Add To Booking
+                  </Link>
+                </motion.div>
+
+                {/* Service 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex-shrink-0 w-80"
+                  whileHover={{
+                    y: -10,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <Plus className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Oven Cleaning</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <DollarSign className="h-5 w-5 text-gray-400" />
+                    <span className="text-3xl font-bold">$50</span>
+                    <span className="text-gray-500 ml-2">per service</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Deep grease removal</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Rack and tray cleaning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Interior and door cleaning</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
+                  >
+                    Add To Booking
+                  </Link>
+                </motion.div>
+
+                {/* Service 4 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex-shrink-0 w-80"
+                  whileHover={{
+                    y: -10,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <Plus className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Cabinet Cleaning</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <DollarSign className="h-5 w-5 text-gray-400" />
+                    <span className="text-3xl font-bold">$45</span>
+                    <span className="text-gray-500 ml-2">per service</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Interior and exterior cleaning</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Door and handle sanitizing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Shelf organization</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
+                  >
+                    Add To Booking
+                  </Link>
+                </motion.div>
+
+                {/* Service 5 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-2xl p-8 shadow-md border border-gray-100 flex-shrink-0 w-80"
+                  whileHover={{
+                    y: -10,
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                  }}
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                      <Plus className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">Blinds Cleaning</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <DollarSign className="h-5 w-5 text-gray-400" />
+                    <span className="text-3xl font-bold">$8</span>
+                    <span className="text-gray-500 ml-2">per blind</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Dust removal from each slat</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Washing as needed</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="h-5 w-5 mr-2 text-blue-600 flex-shrink-0 mt-0.5" />
+                      <span>Fixture and string cleaning</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="bg-blue-600 text-white hover:bg-blue-500 px-6 py-2 rounded-lg text-sm font-medium flex items-center justify-center transition-all duration-300 w-full"
+                  >
+                    Add To Booking
+                  </Link>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

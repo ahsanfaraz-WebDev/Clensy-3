@@ -75,10 +75,16 @@ export default function HeroSection() {
               </Link>
 
               <div className="flex items-center sm:mt-0 mt-4">
-                <div className="flex items-center text-white/90 mr-8">
+                <div className="flex items-center text-white/90 mr-4">
                   <Check className="h-5 w-5 mr-2 text-[#28A745]" />
                   <span className="text-sm whitespace-nowrap">
                     30-second pricing
+                  </span>
+                </div>
+                <div className="flex items-center text-white/90">
+                  <Check className="h-5 w-5 mr-2 text-[#28A745]" />
+                  <span className="text-sm whitespace-nowrap">
+                    100% Satisfaction guaranteed
                   </span>
                 </div>
               </div>

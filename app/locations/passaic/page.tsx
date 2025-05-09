@@ -12,8 +12,6 @@ import {
   Mail,
   Building,
 } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 export default function PassaicCountyPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -43,14 +41,10 @@ export default function PassaicCountyPage() {
   ];
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 to-black min-h-screen">
-      {/* Navbar with fixed position */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 to-black shadow-xl">
-        <Navbar />
-      </div>
-
-      {/* Hero Section with Full-Width Image */}
-      <div className="relative h-[50vh] w-full mt-[80px]">
+    <main className="overflow-x-hidden">
+      {/* Hero Section styled like services page */}
+      <section className="relative min-h-[85vh] bg-black pt-16">
+        <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1524055988636-436cfa46e59e?q=80&w=2070&auto=format&fit=crop"
           alt="Passaic County Skyline"
@@ -58,12 +52,13 @@ export default function PassaicCountyPage() {
           className="object-cover brightness-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
 
-        {/* Hero Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 gap-8 items-center min-h-[calc(85vh-64px)]">
+            <div className="flex flex-col justify-end h-full pb-16">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
               Passaic County
             </h1>
             <div className="flex items-center text-gray-300 mb-6">
@@ -88,6 +83,7 @@ export default function PassaicCountyPage() {
           </div>
         </div>
       </div>
+      </section>
 
       {/* Breadcrumb Navigation */}
       <div className="bg-gradient-to-r from-gray-900 to-black py-4 border-y border-gray-800">
@@ -319,8 +315,6 @@ export default function PassaicCountyPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </main>
   );
 }

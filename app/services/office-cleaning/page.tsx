@@ -184,7 +184,7 @@ export default function OfficeCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+                src="https://www.swipedon.com/hubfs/reception-are-ideas-blog-webres.jpg"
                 alt="Office reception area cleaning"
                 fill
                 className="object-cover"
@@ -269,7 +269,7 @@ export default function OfficeCleaningPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg order-2 lg:order-1">
               <Image
-                src="https://images.unsplash.com/photo-1544476915-ed1370594142?q=80&w=1974&auto=format&fit=crop"
+                src="https://www.hommage-hotels.com/fileadmin/user_upload/Header_Veranstaltungen_K%C3%96_Desktopansicht___2_.png"
                 alt="Meeting room cleaning"
                 fill
                 className="object-cover"
@@ -307,49 +307,6 @@ export default function OfficeCleaningPage() {
                   </span>
                 </li>
               </ul>
-            </div>
-          </div>
-
-          {/* Item 4 - Right image, left text */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">
-                Restrooms & Break Areas
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Maintain impeccable hygiene in employee facilities with our
-                thorough cleaning and sanitization services.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>
-                    Deep cleaning and sanitizing of all restroom fixtures
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>Disinfection of kitchen counters and appliances</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>
-                    Restocking of soap, paper towels, and toilet paper
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="h-5 w-5 mr-3 text-[#007BFF] flex-shrink-0 mt-0.5" />
-                  <span>Cleaning of sinks, microwaves, and refrigerators</span>
-                </li>
-              </ul>
-            </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="https://images.unsplash.com/photo-1623194416248-50d49995c1b9?q=80&w=1974&auto=format&fit=crop"
-                alt="Office break room cleaning"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
@@ -412,149 +369,176 @@ export default function OfficeCleaningPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-white">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               What Our Corporate Clients Say
             </h2>
-            <p className="text-lg text-gray-600">
-              Discover why businesses trust us for their professional cleaning
-              needs.
+            <p className="text-lg text-white/80">
+              Hear from our satisfied corporate clients about their experience
+              with our office cleaning service.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-gray-50 p-8 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
               <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#007BFF] flex items-center justify-center text-white font-bold">
-                    T
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-bold">Thomas Wilson</h4>
-                  <p className="text-sm text-gray-500">
-                    Office Manager, TechCorp Inc.
-                  </p>
-                </div>
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
               </div>
-              <div className="flex mb-4">
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-              </div>
-              <p className="text-gray-600">
+              <p className="text-white/80 mb-6">
                 "Clensy has transformed our office space. Their attention to
                 detail and consistent quality have made a significant difference
                 in our workplace environment. Our employees and clients
                 regularly comment on how clean our offices look."
               </p>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-gray-50 p-8 rounded-xl">
-              <div className="flex items-center mb-4">
-                <div className="mr-4">
-                  <div className="w-12 h-12 rounded-full bg-[#007BFF] flex items-center justify-center text-white font-bold">
-                    J
-                  </div>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <div>
-                  <h4 className="font-bold">Jennifer Rodriguez</h4>
-                  <p className="text-sm text-gray-500">
-                    Operations Director, Atlas Financial
-                  </p>
+                  <p className="font-semibold">Thomas Wilson</p>
+                  <p className="text-white/60 text-sm">TechCorp Inc.</p>
                 </div>
               </div>
-              <div className="flex mb-4">
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                <Star className="h-5 w-5 text-yellow-500 fill-current" />
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
               </div>
-              <p className="text-gray-600">
+              <p className="text-white/80 mb-6">
                 "We've tried several commercial cleaning companies over the
                 years, but Clensy stands out for their reliability and
                 professionalism. Their team is thorough, punctual, and
                 accommodating to our specific needs. A truly outstanding
                 service!"
               </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">Jennifer Rodriguez</p>
+                  <p className="text-white/60 text-sm">Atlas Financial</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl">
+              <div className="flex items-center mb-4">
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+                <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
+              </div>
+              <p className="text-white/80 mb-6">
+                "Since partnering with Clensy for our office cleaning needs,
+                we've noticed a significant improvement in workplace morale.
+                Their consistent service and attention to sanitizing high-touch
+                areas has reduced sick days and created a healthier environment
+                for everyone."
+              </p>
+              <div className="flex items-center">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                  <Image
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop"
+                    alt="Client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">David Chen</p>
+                  <p className="text-white/60 text-sm">Innovate Solutions</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <div className="max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
-              Common questions about our office cleaning services.
+            <p className="text-lg text-gray-600 text-center mb-12">
+              Learn more about our office cleaning service.
             </p>
-          </div>
 
-          <div className="max-w-3xl mx-auto divide-y divide-gray-200">
-            {/* Question 1 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                How often do you recommend cleaning for office spaces?
-              </h3>
-              <p className="text-gray-600">
-                Most offices benefit from daily or every-other-day cleaning for
-                high-traffic areas like reception, restrooms, and break rooms.
-                For workstations and meeting rooms, 2-3 times per week is
-                typically sufficient. We can create a custom schedule based on
-                your specific needs and budget.
-              </p>
-            </div>
+            <div className="space-y-8">
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  How often do you recommend cleaning for office spaces?
+                </h3>
+                <p className="text-gray-600">
+                  Most offices benefit from daily or every-other-day cleaning
+                  for high-traffic areas like reception, restrooms, and break
+                  rooms. For workstations and meeting rooms, 2-3 times per week
+                  is typically sufficient. We can create a custom schedule based
+                  on your specific needs and budget.
+                </p>
+              </div>
 
-            {/* Question 2 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                Do your cleaning professionals work after business hours?
-              </h3>
-              <p className="text-gray-600">
-                Yes, we understand that cleaning during business hours can
-                disrupt your operations. Most of our corporate clients prefer
-                after-hours cleaning, and we're happy to accommodate evening,
-                early morning, or weekend schedules to minimize disruption to
-                your business.
-              </p>
-            </div>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  Do your cleaning professionals work after business hours?
+                </h3>
+                <p className="text-gray-600">
+                  Yes, we understand that cleaning during business hours can
+                  disrupt your operations. Most of our corporate clients prefer
+                  after-hours cleaning, and we're happy to accommodate evening,
+                  early morning, or weekend schedules to minimize disruption to
+                  your business.
+                </p>
+              </div>
 
-            {/* Question 3 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                Are your cleaning products safe for office environments?
-              </h3>
-              <p className="text-gray-600">
-                We use commercial-grade, eco-friendly cleaning products that are
-                effective yet safe for office environments. Our cleaning
-                solutions are low-odor and quick-drying, ensuring your office is
-                fresh and ready for use without lingering chemical smells.
-              </p>
-            </div>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  Are your cleaning products safe for office environments?
+                </h3>
+                <p className="text-gray-600">
+                  We use commercial-grade, eco-friendly cleaning products that
+                  are effective yet safe for office environments. Our cleaning
+                  solutions are low-odor and quick-drying, ensuring your office
+                  is fresh and ready for use without lingering chemical smells.
+                </p>
+              </div>
 
-            {/* Question 4 */}
-            <div className="py-6">
-              <h3 className="text-lg font-bold mb-2">
-                Can you accommodate specialized cleaning needs for our office?
-              </h3>
-              <p className="text-gray-600">
-                Absolutely. We understand that every office has unique
-                requirements. Whether you need specialized cleaning for
-                sensitive electronic equipment, high-security areas, or have
-                specific protocols for cleaning certain spaces, we can tailor
-                our services to meet your exact specifications.
-              </p>
+              <div className="bg-white p-8 rounded-2xl shadow-sm border-l-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-3">
+                  Can you accommodate specialized cleaning needs for our office?
+                </h3>
+                <p className="text-gray-600">
+                  Absolutely. We understand that every office has unique
+                  requirements. Whether you need specialized cleaning for
+                  sensitive electronic equipment, high-security areas, or have
+                  specific protocols for cleaning certain spaces, we can tailor
+                  our services to meet your exact specifications.
+                </p>
+              </div>
             </div>
           </div>
         </div>

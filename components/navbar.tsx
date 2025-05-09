@@ -112,7 +112,7 @@ export default function Navbar() {
                         href="/services/airbnb-cleaning"
                         className="apple-dropdown-link block"
                       >
-                        AirBNB Cleaning
+                        Airbnb Cleaning
                       </Link>
                     </li>
                     <li>
@@ -210,7 +210,10 @@ export default function Navbar() {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/company/about" className="apple-dropdown-link block">
+                      <Link
+                        href="/company/about"
+                        className="apple-dropdown-link block"
+                      >
                         About Us
                       </Link>
                     </li>
@@ -249,18 +252,18 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link
-                        href="/locations/essex"
-                        className="apple-dropdown-link block"
-                      >
-                        Essex County
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
                         href="/locations/hudson"
                         className="apple-dropdown-link block"
                       >
                         Hudson County
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/locations/essex"
+                        className="apple-dropdown-link block"
+                      >
+                        Essex County
                       </Link>
                     </li>
                     <li>
@@ -277,6 +280,14 @@ export default function Navbar() {
                         className="apple-dropdown-link block"
                       >
                         Union County
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/locations/morris"
+                        className="apple-dropdown-link block"
+                      >
+                        Morris County
                       </Link>
                     </li>
                   </ul>

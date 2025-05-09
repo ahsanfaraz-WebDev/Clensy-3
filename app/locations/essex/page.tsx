@@ -12,8 +12,6 @@ import {
   Mail,
   Building,
 } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 export default function EssexCountyPage() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -49,51 +47,51 @@ export default function EssexCountyPage() {
   ];
 
   return (
-    <main className="bg-gradient-to-b from-gray-900 to-black min-h-screen">
-      {/* Navbar with fixed position */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-gray-900 to-black shadow-xl">
-        <Navbar />
-      </div>
+    <main className="overflow-x-hidden">
+      {/* Hero Section styled like services page */}
+      <section className="relative min-h-[85vh] bg-black pt-16">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?q=80&w=2070&auto=format&fit=crop"
+            alt="Essex County Skyline"
+            fill
+            className="object-cover brightness-50"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+        </div>
 
-      {/* Hero Section with Full-Width Image */}
-      <div className="relative h-[50vh] w-full mt-[80px]">
-        <Image
-          src="https://images.unsplash.com/photo-1553697388-94e804e2f0f6?q=80&w=2070&auto=format&fit=crop"
-          alt="Essex County Skyline"
-          fill
-          className="object-cover brightness-50"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-
-        {/* Hero Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
-              Essex County
-            </h1>
-            <div className="flex items-center text-gray-300 mb-6">
-              <MapPin className="h-5 w-5 text-blue-400 mr-2" />
-              <p>280 South Harrison Street, Suite 1F, East Orange, NJ 07018</p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="https://maps.google.com/?q=280+South+Harrison+Street+East+Orange+NJ+07018"
-                target="_blank"
-                className="inline-block px-8 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
-              >
-                GET DIRECTIONS
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-md font-medium hover:bg-white/20 transition-colors"
-              >
-                <Calendar className="mr-2 h-5 w-5" /> BOOK NOW
-              </Link>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 gap-8 items-center min-h-[calc(85vh-64px)]">
+            <div className="flex flex-col justify-end h-full pb-16">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
+                Essex County
+              </h1>
+              <div className="flex items-center text-gray-300 mb-6">
+                <MapPin className="h-5 w-5 text-blue-400 mr-2" />
+                <p>
+                  280 South Harrison Street, Suite 1F, East Orange, NJ 07018
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="https://maps.google.com/?q=280+South+Harrison+Street+East+Orange+NJ+07018"
+                  target="_blank"
+                  className="inline-block px-8 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700 transition-colors"
+                >
+                  GET DIRECTIONS
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-md font-medium hover:bg-white/20 transition-colors"
+                >
+                  <Calendar className="mr-2 h-5 w-5" /> BOOK NOW
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Breadcrumb Navigation */}
       <div className="bg-gradient-to-r from-gray-900 to-black py-4 border-y border-gray-800">
@@ -326,8 +324,6 @@ export default function EssexCountyPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </main>
   );
 }
